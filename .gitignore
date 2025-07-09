@@ -94,4 +94,8 @@ output/*
 
 data/original/cv.docx
 data/original/cv.pdf
-!data/original/!output/.gitkeep
+data/original/cv.md
+!data/original/output/.gitkeep
+
+data/original/media/image1.png
+!data/original/media/.gitkeep
