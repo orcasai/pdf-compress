@@ -91,3 +91,7 @@ data/pdfs/*.pdf
 
 output/*
 !output/.gitkeep
+
+data/original/cv.docx
+data/original/cv.pdf
+!data/original/!output/.gitkeep
