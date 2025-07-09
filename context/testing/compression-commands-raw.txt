@@ -1,0 +1,90 @@
+RAW TERMINAL COMMANDS - BILDKOMPRIMIERUNG SESSION
+=================================================
+
+Datum: 8. Juli 2025
+Zeitraum: 09:57:03 - 10:08:28
+
+CHRONOLOGISCHE REIHENFOLGE DER KOMMANDOS:
+
+[2025-07-08 09:57:03.734269]
+brew uninstall mupdf-tools
+
+[2025-07-08 09:58:37.967208]
+brew install ghostscript
+
+[2025-07-08 09:59:11.588669]
+gs -sDEVICE=pdfwrite -dPDFSETTINGS=/screen -r300 \
+-dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH \
+-sOutputFile=./Downloads/CV-Orange-Opt3.pdf ./Downloads/CV-Orange.pdf
+
+[2025-07-08 10:00:09.994379]
+brew uninstall ghostscript
+
+[2025-07-08 10:03:56.320340]
+brew install ghostscript
+
+[2025-07-08 10:04:37.470759]
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/ebook -dJPEGQ=90 \
+-dColorImageDownsampleType=/Bicubic \
+-dColorImageResolution=200 \
+-dNOPAUSE -dQUIET -dBATCH \
+-sOutputFile=./Downloads/CV-Orange-Opt3.pdf ./Downloads/CV-Orange.pdf
+
+[2025-07-08 10:04:54.431202]
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/ebook -dJPEGQ=90 \
+-dColorImageDownsampleType=/Bicubic \
+-dColorImageResolution=200 \
+-dNOPAUSE -dQUIET -dBATCH \
+-sOutputFile=./Downloads/CV-Green-Opt3.pdf ./Downloads/CV-Green.pdf
+
+[2025-07-08 10:08:15.871806]
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/ebook -dJPEGQ=90 \
+-dColorImageDownsampleType=/Bicubic \
+-dColorImageResolution=200 \
+-dNOPAUSE -dQUIET -dBATCH \
+-sOutputFile=./Downloads/CV-PR-Green.pdf ./Downloads/CV-PL-Green.pdf
+
+[2025-07-08 10:08:28.123281]
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/ebook -dJPEGQ=90 \
+-dColorImageDownsampleType=/Bicubic \
+-dColorImageResolution=200 \
+-dNOPAUSE -dQUIET -dBATCH \
+-sOutputFile=./Downloads/CV-PR-Orange.pdf ./Downloads/CV-PL-Orange.pdf
+
+=================================================
+
+ANALYSE DER KOMMANDOS:
+
+1. TOOL-WECHSEL:
+   - Deinstallation von mupdf-tools
+   - Installation von ghostscript
+
+2. GHOSTSCRIPT-PROBLEME:
+   - Erste Installation: 09:58:37
+   - Deinstallation: 10:00:09 (Problem?)
+   - Neuinstallation: 10:03:56
+
+3. PARAMETER-EVOLUTION:
+   - Erste Versuche: -dPDFSETTINGS=/screen -r300
+   - Finale Einstellungen: -dPDFSETTINGS=/ebook -dJPEGQ=90
+
+4. VERARBEITETE DATEIEN:
+   - CV-Orange.pdf → CV-Orange-Opt3.pdf
+   - CV-Green.pdf → CV-Green-Opt3.pdf
+   - CV-PL-Green.pdf → CV-PR-Green.pdf
+   - CV-PL-Orange.pdf → CV-PR-Orange.pdf
+
+5. OPTIMIERUNGSEINSTELLUNGEN:
+   - JPEG-Qualität: 90
+   - Bildauflösung: 200 DPI
+   - Downsampling: Bicubic
+   - PDF-Setting: /ebook (mittlere Komprimierung)
+
+=================================================
+
+QUELLE: Warp Terminal SQLite Database
+EXPORT-DATUM: 2025-07-09 13:12:00
