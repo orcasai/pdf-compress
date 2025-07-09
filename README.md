@@ -303,22 +303,34 @@ python src/crop_circle.py --debug
 - Effiziente Speichernutzung durch PIL-Optimierungen
 - Ghostscript-Subprocess-Management für Komprimierung
 
-## 📋 Lizenz
+## 🤖 KI-Unterstützte Entwicklung
 
-[Lizenzinformationen hier einfügen]
+Dieses Projekt demonstriert die effiziente Zusammenarbeit mit künstlicher Intelligenz zur schnellen Entwicklung professioneller Tools. Durch gezieltes Prompting und maximale Kontextübertragung können komplexe Aufgaben in kürzester Zeit umgesetzt werden.
 
-## 🤝 Beiträge
+### Dokumentierte Entwicklungshistorie
 
-Beiträge sind willkommen! Bitte:
+Das `context/` Verzeichnis enthält die vollständige Entwicklungshistorie und zeigt Best Practices für KI-gestützte Softwareentwicklung:
 
-1. Forken Sie das Repository
-2. Erstellen Sie einen Feature-Branch
-3. Committen Sie Ihre Änderungen
-4. Erstellen Sie eine Pull Request
+#### Prompting-Strategien (`context/prompting/`)
+- **`chatgpt-avm-history.md`**: Dokumentation der ChatGPT-Interaktionen und Prompt-Optimierungen
+- **`claude-desktop-history.md`**: Claude Desktop Workflow-Dokumentation und Kontextmanagement
 
-## 📋 Support
+#### Visuelle Entwicklungsbeispiele (`context/visual-examples/`)
 
-Bei Problemen oder Fragen:
-- öffnen Sie ein Issue im Repository
-- überprüfen Sie die Troubleshooting-Sektion
-- Kontaktieren Sie das Entwicklungsteam
+**Workflow-Optimierungen** (`preferences/`):
+- **`das-wichtigste-tool-von-allen.png`**: Demonstration der wichtigsten Entwicklungstools und deren Integration
+- **`ein-kleiner-einblick-in-commit-workflow.png`**: Einblick in den effizienten Git-Commit-Workflow mit KI-Unterstützung
+- **`kleiner-hinweis-wie-hier-informationen-hin-und-her-geschoben-werden.jpeg`**: Visualisierung der Informationsübertragung zwischen Entwickler und KI
+
+**Problemlösungsansätze** (`issues/`):
+- **`claude-code-in-die-knie-gezwungen-wegen-multi-edit-fehler.png`**: Dokumentation technischer Herausforderungen und deren Lösung
+
+### Entwicklungseffizienz durch KI
+
+Dieses Repository veranschaulicht, wie durch strukturierte KI-Zusammenarbeit:
+- **Komplexe Bildverarbeitungslogik** in wenigen Iterationen entwickelt wird
+- **Robuste PDF-Manipulation** ohne umfangreiche Dokumentationsstudien implementiert wird  
+- **Professionelle Code-Qualität** durch iterative Verbesserung erreicht wird
+- **Umfangreiche Dokumentation** parallel zur Entwicklung entsteht
+
+Die visuellen Beispiele zeigen konkrete Arbeitsabläufe und demonstrieren, wie maximaler Kontext durch präzise Kommunikation übertragen wird, um optimale Ergebnisse zu erzielen.
