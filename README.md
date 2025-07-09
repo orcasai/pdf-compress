@@ -31,17 +31,49 @@ Dieses Repository demonstriert die effiziente Zusammenarbeit mit künstlicher In
 
 ## 🤖 Dokumentierte KI-Zusammenarbeit
 
-### Entwicklungshistorie (`context/`)
+### Entwicklungshistorie ([`context/`](./context/))
 
-**Prompting-Strategien** (`context/prompting/`):
-- `chatgpt-avm-history.md`: ChatGPT-Interaktionen und Prompt-Optimierungen
-- `claude-desktop-history.md`: Claude Desktop Workflow-Dokumentation
+#### Prompting-Strategien ([`context/prompting/`](./context/prompting/))
 
-**Visuelle Entwicklungsbeispiele** (`context/visual-examples/`):
-- `das-wichtigste-tool-von-allen.png`: Demonstration der wichtigsten Entwicklungstools
-- `ein-kleiner-einblick-in-commit-workflow.png`: Effizienter Git-Workflow mit KI-Unterstützung
-- `kleiner-hinweis-wie-hier-informationen-hin-und-her-geschoben-werden.jpeg`: Kontextübertragung zwischen Entwickler und KI
-- `claude-code-in-die-knie-gezwungen-wegen-multi-edit-fehler.png`: Technische Herausforderungen und Lösungsansätze
+**ChatGPT-Entwicklungshistorie:**
+- 📄 **[`chatgpt-avm-history.md`](./context/prompting/chatgpt-avm-history.md)**: Vollständige ChatGPT-Interaktionen zur Problemlösung
+  - Initiale Problemanalyse der KickResume PDF-Struktur
+  - Iterative Python-Script-Entwicklung für Bildpositionierung
+  - Debugging-Strategien für präzise Koordinaten-Konfiguration
+  - Prompt-Optimierungen für bessere Code-Qualität
+
+**Claude Desktop-Entwicklungshistorie:**
+- 📄 **[`claude-desktop-history.md`](./context/prompting/claude-desktop-history.md)**: Claude Desktop Workflow-Dokumentation
+  - Strukturierte Codebase-Analyse und Architektur-Planung
+  - Refactoring-Strategien für modulare Entwicklung
+  - Dokumentations-Erstellung parallel zur Implementierung
+  - Kontextmanagement für komplexe Entwicklungsaufgaben
+
+#### Visuelle Entwicklungsbeispiele ([`context/visual-examples/`](./context/visual-examples/))
+
+**Workflow-Optimierungen** ([`preferences/`](./context/visual-examples/preferences/)):
+
+- 🖼️ **[`das-wichtigste-tool-von-allen.png`](./context/visual-examples/preferences/das-wichtigste-tool-von-allen.png)**: 
+  - **Zweck**: Demonstration der wichtigsten Entwicklungstools und deren Integration
+  - **Inhalt**: Screenshot der Tool-Konfiguration für optimale KI-Zusammenarbeit
+  - **Relevanz**: Zeigt, wie durch richtige Tool-Auswahl die Entwicklungseffizienz maximiert wird
+
+- 🖼️ **[`ein-kleiner-einblick-in-commit-workflow.png`](./context/visual-examples/preferences/ein-kleiner-einblick-in-commit-workflow.png)**: 
+  - **Zweck**: Einblick in den effizienten Git-Commit-Workflow mit KI-Unterstützung
+  - **Inhalt**: Visualisierung des strukturierten Commit-Prozesses
+  - **Relevanz**: Demonstriert professionelle Versionskontrolle durch KI-assistierte Entwicklung
+
+- 🖼️ **[`kleiner-hinweis-wie-hier-informationen-hin-und-her-geschoben-werden.jpeg`](./context/visual-examples/preferences/kleiner-hinweis-wie-hier-informationen-hin-und-her-geschoben-werden.jpeg)**: 
+  - **Zweck**: Visualisierung der Informationsübertragung zwischen Entwickler und KI
+  - **Inhalt**: Konkrete Beispiele für maximale Kontextübertragung
+  - **Relevanz**: Zeigt Best Practices für effiziente KI-Kommunikation
+
+**Problemlösungsansätze** ([`issues/`](./context/visual-examples/issues/)):
+
+- 🖼️ **[`claude-code-in-die-knie-gezwungen-wegen-multi-edit-fehler.png`](./context/visual-examples/issues/claude-code-in-die-knie-gezwungen-wegen-multi-edit-fehler.png)**: 
+  - **Zweck**: Dokumentation technischer Herausforderungen und deren Lösung
+  - **Inhalt**: Konkreter Problemfall mit MultiEdit-Tool und Lösungsansatz
+  - **Relevanz**: Zeigt Debugging-Methodik und iterative Problemlösung mit KI-Unterstützung
 
 ### Entwicklungseffizienz durch KI
 
