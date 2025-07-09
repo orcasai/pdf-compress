@@ -1,0 +1,38 @@
+# Image Optimize - CV PDF Workflow
+
+> Python-based CV image optimization tool that processes profile images and integrates them into PDF documents with automatic compression for professional use.
+
+This project demonstrates AI-assisted development for solving real-world problems. It provides a complete pipeline for transforming large KickResume PDFs (20+ MB) into optimized professional CVs (~2MB) with precise image positioning and quality preservation.
+
+The codebase showcases structured AI collaboration workflow with comprehensive documentation of the development process, making it ideal for understanding modern AI-assisted software development practices.
+
+## Guides
+- [README.md](README.md): Complete project overview with KickResume problem context and AI development approach
+- [CLAUDE.md](CLAUDE.md): Claude Code integration guide with commands, architecture, and workflow instructions
+- [REQUIREMENTS.md](REQUIREMENTS.md): Detailed setup requirements and system dependencies
+
+## Code Reference
+- [src/main_workflow.py](src/main_workflow.py): Complete workflow orchestration and error handling
+- [src/crop_circle.py](src/crop_circle.py): Circular image cropping with optimized face positioning
+- [src/insert_image.py](src/insert_image.py): PDF image integration with precise coordinate placement
+- [src/compress_pdf.py](src/compress_pdf.py): Multi-strategy PDF compression with Ghostscript
+
+## Examples & Testing
+- [main.py](main.py): Primary entry point for complete workflow execution
+- [test_compression.py](test_compression.py): Compression quality comparison across all strategies
+- [data/](data/): Input templates and sample images for testing
+- [output/](output/): Generated results with sequential numbering system
+
+## AI Development Context
+- [context/prompting/chatgpt-avm-history.md](context/prompting/chatgpt-avm-history.md): Complete ChatGPT development history and problem-solving iterations
+- [context/prompting/claude-desktop-history.md](context/prompting/claude-desktop-history.md): Claude Desktop workflow documentation and refactoring strategies
+- [context/testing/image-compression-summary.md](context/testing/image-compression-summary.md): Comprehensive testing results and quality analysis
+
+## Configuration
+- [pyproject.toml](pyproject.toml): Modern Python project configuration with uv package management
+- Key parameters: `vertical_shift_pct=0.05`, `position=(35, 22)`, `quality="custom-balanced"`
+- Dependencies: `pillow>=11.3.0`, `pymupdf>=1.26.3`
+
+## Optional
+- [context/visual-examples/](context/visual-examples/): Screenshots demonstrating AI development workflow and tools
+- [context/testing/compression-commands-raw.txt](context/testing/compression-commands-raw.txt): Raw testing commands and output logs
