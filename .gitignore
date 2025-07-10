@@ -77,25 +77,28 @@ Thumbs.db
 .python-version
 
 # Ignore content but keep directory structure
-data/images/*.jpg
-data/images/*.jpeg
-data/images/*.png
-data/images/*.gif
+!data/images/.gitkeep
+!data/original/media/.gitkeep
+!data/original/output/.gitkeep
+!data/pdfs/.gitkeep
+!output/.gitkeep
 data/images/*.bmp
+data/images/*.gif
+data/images/*.jpeg
+data/images/*.jpg
+data/images/*.png
 data/images/*.tiff
 data/images/*.webp
-!data/images/.gitkeep
-
-data/pdfs/*.pdf
-!data/pdfs/.gitkeep
-
-output/*
-!output/.gitkeep
-
+data/original/Bildschirmfoto 2025-07-10 um 10.24.00.png
+data/original/cv-gr.pdf
+data/original/cv-or.pdf
 data/original/cv.docx
-data/original/cv.pdf
 data/original/cv.md
-!data/original/output/.gitkeep
-
+data/original/cv.pdf
+data/original/cv_old.docx
+data/original/cv_old.md
+data/original/cv_old.pdf
 data/original/media/image1.png
-!data/original/media/.gitkeep
+data/original/test.md
+data/pdfs/*.pdf
+output/*

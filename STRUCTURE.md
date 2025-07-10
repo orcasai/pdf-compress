@@ -57,7 +57,7 @@ context/
 ### Core Project Structure
 
 ```
-image-optimize/
+pdf-compress/
 ├── src/                     # Haupt-Quellcode
 │   ├── main_workflow.py     # Workflow-Orchestrierung
 │   ├── crop_circle.py       # Kreisförmige Bildextraktion

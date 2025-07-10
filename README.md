@@ -139,7 +139,6 @@ sudo apt-get install ghostscript
 
 ```bash
 git clone <repository-url>
-cd image-optimize
 uv sync
 ```
 
@@ -194,7 +193,7 @@ output/
 ## 🛠️ Projektstruktur
 
 ```
-image-optimize/
+pdf-compress/
 ├── src/                     # Haupt-Quellcode
 │   ├── main_workflow.py     # Workflow-Orchestrierung
 │   ├── crop_circle.py       # Kreisförmige Bildextraktion
