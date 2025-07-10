@@ -5,6 +5,9 @@ description = "Python tool for automatic CV image optimization and PDF integrati
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "markdownify>=1.1.0",
     "pillow>=11.3.0",
     "pymupdf>=1.26.3",
+    "requests>=2.32.4",
 ]
