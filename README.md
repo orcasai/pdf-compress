@@ -9,7 +9,7 @@ Dieses Repository demonstriert die effiziente Zusammenarbeit mit künstlicher In
 **Ausgangssituation:**
 - KickResume erstellt professionelle CVs, aber die PDF-Dateien sind **20+ MB groß**
 - Herkömmliche Komprimierung (Ghostscript, etc.) führt zu **starker Bildqualitätsverlust**
-- Die Webseite bietet nur die Option: entweder volles PDF mit Bild oder komprimiertes PDF ohne Bild
+- Die Webseite bietet nur die Option: entweder volles PDF mit Bild oder ohne Bild
 
 **Herausforderung:**
 - Präzise Bildpositionierung in PDFs ohne Qualitätsverlust
