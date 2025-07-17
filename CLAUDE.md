@@ -92,18 +92,18 @@ data/
 │   ├── cv-image.jpg          # Primary profile image
 │   └── cv-image-2.jpg        # Alternative image
 └── pdfs/
-    ├── CV-PR-Green.pdf       # Green themed CV template
-    └── CV-PR-Orange.pdf      # Orange themed CV template
+    ├── cv.pdf       # Green themed CV template
+    └── cv (1).pdf   # Orange themed CV template
 ```
 
 ### Output Files (Sequential Numbering)
 ```
 output/
 ├── 01-crop-circle-output.png           # Circular profile image
-├── 02-CV-PR-Green-with-image.pdf       # Green CV with image
-├── 02-CV-PR-Orange-with-image.pdf      # Orange CV with image
-├── 03-CV-PR-Green-final.pdf            # Compressed Green CV
-└── 03-CV-PR-Orange-final.pdf           # Compressed Orange CV
+├── cv-with-image.pdf                   # Green CV with image
+├── 02-cv (1)-with-image.pdf            # Orange CV with image
+├── cv-robin-walter-scherler-gr.pdf     # Compressed Green CV
+└── cv-robin-walter-scherler-or.pdf     # Compressed Orange CV
 ```
 
 ## Development Workflow

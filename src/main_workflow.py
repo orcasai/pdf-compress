@@ -18,18 +18,18 @@ def process_cv_workflow():
     Workflow-Schritte:
     1. Profilbild einmal zu Kreis zuschneiden → 01-crop-circle-output.png
     2. Kreis in beide PDFs einfügen:
-       - Green → 02-CV-PR-Green-with-image.pdf  
-       - Orange → 02-CV-PR-Orange-with-image.pdf
+       - Green → cv-with-image.pdf  
+       - Orange → 02-cv (1)-with-image.pdf
     3. Beide PDFs komprimieren:
-       - Green → 03-CV-PR-Green-final.pdf
-       - Orange → 03-CV-PR-Orange-final.pdf
+       - Green → cv-robin-walter-scherler-gr.pdf
+       - Orange → cv-robin-walter-scherler-or.pdf
     """
     BASE = Path(__file__).parent.parent
     
     # Input-Pfade (neue Struktur)
     input_image = BASE / "data" / "images" / "cv-image.jpg"
-    green_pdf = BASE / "data" / "pdfs" / "CV-PR-Green.pdf"
-    orange_pdf = BASE / "data" / "pdfs" / "CV-PR-Orange.pdf"
+    green_pdf = BASE / "data" / "pdfs" / "cv.pdf"
+    orange_pdf = BASE / "data" / "pdfs" / "cv (1).pdf"
     
     # Output-Verzeichnis
     output_dir = BASE / "output"
@@ -37,10 +37,10 @@ def process_cv_workflow():
     
     # Output-Pfade (nummeriert nach Workflow-Schritten)
     circle_image = output_dir / "01-crop-circle-output.png"
-    green_with_image = output_dir / "02-CV-PR-Green-with-image.pdf"
-    orange_with_image = output_dir / "02-CV-PR-Orange-with-image.pdf"
-    green_final = output_dir / "03-CV-PR-Green-final.pdf"
-    orange_final = output_dir / "03-CV-PR-Orange-final.pdf"
+    green_with_image = output_dir / "cv-with-image.pdf"
+    orange_with_image = output_dir / "02-cv (1)-with-image.pdf"
+    green_final = output_dir / "cv-robin-walter-scherler-gr.pdf"
+    orange_final = output_dir / "cv-robin-walter-scherler-or.pdf"
     
     print("🎯 Optimierter CV-PDF-Workflow")
     print("="*50)

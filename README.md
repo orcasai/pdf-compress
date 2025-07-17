@@ -156,18 +156,18 @@ python main.py
 data/
 ├── images/cv-image.jpg          # Ihr Profilbild
 └── pdfs/
-    ├── CV-PR-Green.pdf          # Green Theme (ohne Bild)
-    └── CV-PR-Orange.pdf         # Orange Theme (ohne Bild)
+    ├── cv.pdf          # Green Theme (ohne Bild)
+    └── cv (1).pdf         # Orange Theme (ohne Bild)
 ```
 
 **Ausgabe:**
 ```
 output/
 ├── 01-crop-circle-output.png           # Kreisförmiges Profilbild
-├── 02-CV-PR-Green-with-image.pdf       # Green CV mit Bild
-├── 02-CV-PR-Orange-with-image.pdf      # Orange CV mit Bild
-├── 03-CV-PR-Green-final.pdf            # Komprimiertes Green CV (~2MB)
-└── 03-CV-PR-Orange-final.pdf           # Komprimiertes Orange CV (~2MB)
+├── 02-cv-with-image.pdf                # Green CV mit Bild
+├── 02-cv (1)-with-image.pdf            # Orange CV mit Bild
+├── cv-robin-walter-scherler-gr.pdf     # Komprimiertes Green CV (~2MB)
+└── cv-robin-walter-scherler-or.pdf     # Komprimiertes Orange CV (~2MB)
 ```
 
 ## 🎯 Problemlösung im Detail

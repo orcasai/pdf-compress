@@ -188,8 +188,8 @@ if __name__ == "__main__":
     BASE = Path(__file__).parent.parent
     
     # Beispiel-Komprimierung für neue Projektstruktur
-    input_pdf = BASE.parent / "output" / "02-CV-PR-Green-with-image.pdf"
-    output_pdf = BASE.parent / "output" / "03-CV-PR-Green-final.pdf"
+    input_pdf = BASE.parent / "output" / "02-cv-with-image.pdf"
+    output_pdf = BASE.parent / "output" / "cv-robin-walter-scherler-gr.pdf"
     
     if input_pdf.exists():
         print(f"Original-Größe: {get_pdf_size(input_pdf):.2f} MB")

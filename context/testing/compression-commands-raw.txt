@@ -45,7 +45,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
 -dColorImageDownsampleType=/Bicubic \
 -dColorImageResolution=200 \
 -dNOPAUSE -dQUIET -dBATCH \
--sOutputFile=./Downloads/CV-PR-Green.pdf ./Downloads/CV-PL-Green.pdf
+-sOutputFile=./Downloads/cv.pdf ./Downloads/CV-PL-Green.pdf
 
 [2025-07-08 10:08:28.123281]
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
@@ -53,7 +53,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
 -dColorImageDownsampleType=/Bicubic \
 -dColorImageResolution=200 \
 -dNOPAUSE -dQUIET -dBATCH \
--sOutputFile=./Downloads/CV-PR-Orange.pdf ./Downloads/CV-PL-Orange.pdf
+-sOutputFile=./Downloads/cv (1).pdf ./Downloads/CV-PL-Orange.pdf
 
 =================================================
 
@@ -75,8 +75,8 @@ ANALYSE DER KOMMANDOS:
 4. VERARBEITETE DATEIEN:
    - CV-Orange.pdf → CV-Orange-Opt3.pdf
    - CV-Green.pdf → CV-Green-Opt3.pdf
-   - CV-PL-Green.pdf → CV-PR-Green.pdf
-   - CV-PL-Orange.pdf → CV-PR-Orange.pdf
+   - CV-PL-Green.pdf → cv.pdf
+   - CV-PL-Orange.pdf → cv (1).pdf
 
 5. OPTIMIERUNGSEINSTELLUNGEN:
    - JPEG-Qualität: 90

@@ -37,9 +37,9 @@ if __name__ == "__main__":
     BASE = Path(__file__).parent.parent
     
     # Beispiel für neue Projektstruktur
-    input_pdf = BASE.parent / "data" / "pdfs" / "CV-PR-Green.pdf"
+    input_pdf = BASE.parent / "data" / "pdfs" / "cv.pdf"
     input_image = BASE.parent / "output" / "01-crop-circle-output.png"
-    output_pdf = BASE.parent / "output" / "02-CV-PR-Green-with-image.pdf"
+    output_pdf = BASE.parent / "output" / "02-cv-with-image.pdf"
     
     print(f"🔄 Füge {input_image.name} in {input_pdf.name} ein...")
     

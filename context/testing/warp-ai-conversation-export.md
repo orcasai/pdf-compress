@@ -40,14 +40,14 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
 -dColorImageDownsampleType=/Bicubic \
 -dColorImageResolution=200 \
 -dNOPAUSE -dQUIET -dBATCH \
--sOutputFile=./Downloads/CV-PR-Green.pdf ./Downloads/CV-PL-Green.pdf
+-sOutputFile=./Downloads/cv.pdf ./Downloads/CV-PL-Green.pdf
 
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
 -dPDFSETTINGS=/ebook -dJPEGQ=90 \
 -dColorImageDownsampleType=/Bicubic \
 -dColorImageResolution=200 \
 -dNOPAUSE -dQUIET -dBATCH \
--sOutputFile=./Downloads/CV-PR-Orange.pdf ./Downloads/CV-PL-Orange.pdf
+-sOutputFile=./Downloads/cv (1).pdf ./Downloads/CV-PL-Orange.pdf
 ```
 
 ### Zeitstempel der Kommandos:
@@ -74,8 +74,8 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
 5. **Verarbeitete Dateien:**
    - CV-Orange.pdf → CV-Orange-Opt3.pdf
    - CV-Green.pdf → CV-Green-Opt3.pdf
-   - CV-PL-Green.pdf → CV-PR-Green.pdf
-   - CV-PL-Orange.pdf → CV-PR-Orange.pdf
+   - CV-PL-Green.pdf → cv.pdf
+   - CV-PL-Orange.pdf → cv (1).pdf
 
 ## Aktuelle Conversation (9. Juli 2025):
 

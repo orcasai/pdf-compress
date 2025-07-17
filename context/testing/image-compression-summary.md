@@ -60,8 +60,8 @@ Das Image Optimization Project befasst sich mit der Komprimierung von PDF-Dateie
 Erfolgreiche Verarbeitung von 4 PDF-Dateien:
 - `CV-Orange.pdf` → `CV-Orange-Opt3.pdf`
 - `CV-Green.pdf` → `CV-Green-Opt3.pdf`
-- `CV-PL-Green.pdf` → `CV-PR-Green.pdf`
-- `CV-PL-Orange.pdf` → `CV-PR-Orange.pdf`
+- `CV-PL-Green.pdf` → `cv.pdf`
+- `CV-PL-Orange.pdf` → `cv (1).pdf`
 
 ### Qualitätseinstellungen
 

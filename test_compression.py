@@ -10,7 +10,7 @@ def main():
     BASE = Path(__file__).parent
     
     # Test-Datei
-    input_pdf = BASE / "outputs" / "pdfs_with_images" / "CV-PR-Green-Final.pdf"
+    input_pdf = BASE / "outputs" / "pdfs_with_images" / "cv-robin-walter-scherler-gr.pdf"
     
     if not input_pdf.exists():
         print(f"❌ Test-Datei nicht gefunden: {input_pdf}")
