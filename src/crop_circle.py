@@ -39,8 +39,15 @@ def crop_to_circle(
     # Bild mit Maske kombinieren
     result = Image.new("RGBA", (min_dim, min_dim))
     result.paste(square, (0, 0), mask=mask)
+    
+    # Bild verkleinern auf die tatsächliche Größe im PDF (ca. 300x300 für CV)
+    # Das reduziert die Dateigröße ohne sichtbaren Qualitätsverlust
+    final_size = 400  # Pixel
+    if min_dim > final_size:
+        result = result.resize((final_size, final_size), Image.Resampling.LANCZOS)
 
-    result.save(output_path)
+    # PNG mit höherer Komprimierung speichern
+    result.save(output_path, "PNG", optimize=True, compress_level=9)
     print(f"✅ Kreisbild erstellt: {output_path}")
 
 # 🔧 Standalone-Beispiel für neue Projektstruktur
