@@ -35,7 +35,7 @@ Meine Arbeitsweise ist auf Parallelität ausgelegt: Spezifikation schreiben, ein
 
 **Geteilte Domänen statt einer Datenbank**
 
-Dieselbe Idee trägt die Architektur meines aktuellen Produkts: Die Datenhaltung ist in getrennte **Domänen** zerlegt — eigenständige Datenwelten mit je eigener Datenbank, zwischen denen Einträge bewusst transferiert werden, statt zu verschmelzen. Eine eigene Koordinationsschicht mit Transfer-Journal und Austauschprotokoll hält sie konsistent. **Entitäten** wie Kategorien und Sitzungen liegen quer dazu und greifen polymorph über alle Eintragstypen.
+Dieselbe Idee trägt die Architektur meines aktuellen Produkts: Die Datenhaltung ist in getrennte **Domänen** zerlegt — eigenständige Datenwelten mit je eigener Datenbank, zwischen denen Einträge bewusst transferiert werden, statt zu verschmelzen. Eine eigene Koordinationsschicht mit Transfer-Journal und Austauschprotokoll hält sie konsistent. Querschnitts-**Entitäten** liegen quer dazu und greifen polymorph über alle Eintragstypen.
 
 Das parallelisiert Wissensarbeit: mehrere Kontexte gleichzeitig offen, ohne dass eine Abfrage versehentlich über eine Grenze liest — Privacy-by-Architecture als Bauweise, nicht als Absichtserklärung.
 
@@ -45,7 +45,7 @@ Das parallelisiert Wissensarbeit: mehrere Kontexte gleichzeitig offen, ohne dass
 
 **Aktuelles macOS-Produkt — multimodale KI-Erfassung, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
 
-97.000 Zeilen Swift 6, 1.684 Commits, 254 Test-Dateien in drei Monaten — rund 1.000 Zeilen Produktivcode pro Tag, jeden Tag, inklusive Spezifikation und Abnahme. Verarbeitet wird, was bei Wissensarbeit anfällt: **Sprache, Bildschirmvideo, Screenshots mit Texterkennung, Transkription** — jede Modalität mit eigenem Pfad, keine davon in einer Cloud.
+97.000 Zeilen Swift 6, 1.684 Commits, 254 Test-Dateien in drei Monaten — rund 1.000 Zeilen Produktivcode pro Tag, jeden Tag, inklusive Spezifikation und Abnahme. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad.
 
 - **Live-Betrieb als Dauertest — von einem einzigen Nutzer.** 16.318 erfasste Einträge an 84 aktiven Tagen, im Schnitt 194 pro Tag, Spitzentag 475. Keine Seed- oder Testdaten: Entwickler und einziger Anwender in einer Person, jeder Fehler trifft mich am selben Tag.
 - **Spezifikation vor Code.** 240 der 1.684 Commits betreffen ausschließlich Spezifikation und Abnahme. Jedes Feature läuft Spec → Umsetzungsplan → Laufzeit-Abnahme.
@@ -55,7 +55,7 @@ Das parallelisiert Wissensarbeit: mehrere Kontexte gleichzeitig offen, ohne dass
 - **Eigener MCP-Server** (TypeScript) als Agenten-Schnittstelle auf das Produkt — meine Agenten arbeiten produktiv gegen meine eigene Anwendung.
 - **Observability von Anfang an:** OpenTelemetry/OTLP-Spans in Grafana Tempo, Unified Logging über OSLog.
 
-*Wie sich daraus ein Produkt fügt, zeige ich im Gespräch gern live. Ein Beleg steht aber schon hier: Das System hält Kontext über die eigene Arbeit — Ideen, Erfahrungen, Denkwege — und genau daraus ist dieser Lebenslauf entstanden. Die Zahlen oben hat ein Agent über seinen MCP-Server ausgelesen.*
+*Wie sich daraus ein Produkt fügt, zeige ich bei beidseitigem Interesse gern live. Ein Beleg steht aber schon hier: Das System hält Kontext über die eigene Arbeit — Ideen, Erfahrungen, Denkwege — und genau daraus ist dieser Lebenslauf entstanden. Die Zahlen oben hat ein Agent über seinen MCP-Server ausgelesen.*
 
 **Hermes-Companion — macOS-MenuBar-App mit iOS-Begleiter · alleiniger Entwickler · 11/2025 – 06/2026**
 
@@ -76,7 +76,7 @@ Sprachgesteuerte Begleit-App für eine quelloffene Agenten-Plattform: 48.000 Zei
 
 Firmenname und Website hinein, strukturiertes Firmenprofil mit offenen Stellen heraus. Aus einer Bewerbungsaufgabe entstanden — seither als eigenes Produkt weiterbetrieben und öffentlich testbar.
 
-- **Kaskade statt einem Modell.** Sechs Modelle in Reihe, Free-Tier zuerst, zwei bezahlte Auffangstufen greifen erst bei 429 — **100 % Antwortgarantie bei unter 1 Cent pro Lead.** Die Architektur kennt die Kosten vor der Anfrage, nicht danach.
+- **Kaskade statt einem Modell.** Sechs Modelle in Reihe, Free-Tier zuerst, zwei bezahlte Auffangstufen greifen erst bei 429 — **im gemessenen Betrieb 100 % Antwortquote bei unter 1 Cent pro Lead.** Die Architektur kennt die Kosten vor der Anfrage, nicht danach.
 - **Acht ATS-Adapter** (Personio, Recruitee, Greenhouse, Lever u. a.) ziehen Stellendaten direkt aus den Widget-APIs; die LLM-Extraktion gegen Pydantic-Schema ist der generische Auffang gegen Schema-Drift. Vier Adapter live gegen echte Firmen-URLs verifiziert.
 - **Gemessen, nicht geschätzt:** 15–40 s Extraktions-Latenz, 72 Unit- und 4 E2E-Tests, rund 75 % Real-World-Coverage. Mobile-Navigation von 8,7 s auf 1,5 s (5,8×) nach Cloudflare-Edge-Tuning.
 - Python 3.11 · FastAPI · httpx · BeautifulSoup4 · SQLite · Jinja2 · Resend — auf einem Hetzner-VPS hinter einem outbound-only Cloudflare-Tunnel.
@@ -118,7 +118,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Methoden:** Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP
 
-**Domänen:** Multimodale KI auf dem Gerät — Voice, Video, Transkription, Screenshot-OCR · On-Device-Inferenz & Local-First-Architektur · agentische Entwicklungssysteme & LLM-Ops · macOS-/iOS-Produktentwicklung · Recruitment-Tech / ATS-Automatisierung (DACH)
+**Domänen:** Multimodale KI auf dem Gerät · On-Device-Inferenz & Local-First-Architektur · agentische Entwicklungssysteme & LLM-Ops · macOS-/iOS-Produktentwicklung · Recruitment-Tech / ATS-Automatisierung (DACH)
 
 ---
 
@@ -144,7 +144,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Multimodale KI auf dem eigenen Gerät · täglich im Einsatz**
 
-Was bei Wissensarbeit anfällt — Gesprochenes, Bildschirminhalte, Mitschriften — ist das Sensibelste, was ein Arbeitsrechner überhaupt zu sehen bekommt. Die übliche Antwort darauf ist Verschlüsselung in der Cloud. Meine Antwort ist, dass die Daten das Gerät gar nicht erst verlassen.
+Laufend anfallende Arbeitsdaten mit hohem Personenbezug sind das Sensibelste, was ein Arbeitsrechner überhaupt zu sehen bekommt. Die übliche Antwort darauf ist Verschlüsselung in der Cloud. Meine Antwort ist, dass die Daten das Gerät gar nicht erst verlassen.
 
 - **Alles auf dem Gerät.** Transkription über Apples SpeechAnalyzer lokal, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad, kein Fremdanbieter, kein Modell-Download. Diese Entscheidung ist bewusst gefallen — nicht aus Mangel an Infrastruktur, sondern weil sie bei diesen Daten die richtige ist.
 - **Domänen als Grenzen.** Getrennte Datenbanken statt einer mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. Datenschutz als Bauweise statt als Einstellung.
@@ -165,4 +165,4 @@ Ich habe in einer Umgebung, die ich vollständig selbst verantworte, den komplet
 - **Datenhoheit, wo sie verlangt wird.** Vollständiger KI-Zugriff auf sensible Daten, ohne dass sie das Gerät verlassen. Genau die Bedingung, unter der viele Unternehmen unter DSGVO und AI Act überhaupt erst anfangen können.
 - **Kontext als Kernkompetenz.** Ideen, Erfahrungen und Denkwege so verfügbar zu halten, dass KI daraus etwas bauen kann, das trägt — dafür habe ich mein System gebaut, und dieser Lebenslauf ist daraus entstanden. Die Zahlen darin hat ein Agent über meinen eigenen MCP-Server ausgelesen.
 
-**Was ich suche:** eine Rolle, in der KI in Betrieb gehen soll statt vorgeführt zu werden — mit viel eigener Verantwortung, an einem tiefen statt breiten Problem, gern dort, wo Daten das Haus nicht verlassen dürfen. Was mir dafür noch fehlt, hole ich mir; die letzten anderthalb Jahre sind der Beleg dafür. **Was ich für mich gelöst habe, löse ich genauso für ein Unternehmen.**
+**Was ich suche:** eine Rolle, in der KI in Betrieb gehen soll statt vorgeführt zu werden — mit viel eigener Verantwortung, an einem tiefen statt breiten Problem, gern dort, wo Daten das Haus nicht verlassen dürfen. Was mir dafür noch fehlt, hole ich mir; die letzten anderthalb Jahre sind der Beleg dafür. **Dieselbe Disziplin, dieselbe Bauweise — angewendet auf das Problem eines Unternehmens.**
