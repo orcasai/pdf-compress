@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Robin Walter Scherler — Lebenslauf</title>
+<style>
+@page { size: A4; margin: 1.1cm 1.35cm 1.1cm 1.35cm; }
+html { font-family: "Charter", "Iowan Old Style", "Georgia", serif; font-size: 8.8pt; line-height: 1.32; color: #1a1a1a; }
+body { margin: 0; }
+
+.masthead { border-bottom: 3px solid #111; margin-bottom: 0.55em; padding-bottom: 0.35em; }
+.cvname { font-family: "Helvetica Neue", -apple-system, Arial, sans-serif; font-size: 23pt; font-weight: 800; letter-spacing: -0.015em; color: #111; }
+.cvtag { font-family: "Helvetica Neue", -apple-system, Arial, sans-serif; font-size: 8.6pt; color: #444; margin-top: 0.35em; text-transform: uppercase; letter-spacing: 0.05em; }
+.cvmeta { font-family: "Helvetica Neue", -apple-system, Arial, sans-serif; font-size: 8.4pt; color: #666; margin-top: 0.12em; }
+
+#adresse, #adresse + p { display: none; }
+
+h1 { font-family: "Helvetica Neue", -apple-system, Arial, sans-serif; font-size: 12pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #111; border-top: 2px solid #111; padding-top: 0.4em; margin: 0.85em 0 0.3em 0; break-after: avoid; page-break-after: avoid; }
+h2 { font-family: "Helvetica Neue", -apple-system, Arial, sans-serif; font-size: 10pt; font-weight: 700; color: #111; margin: 0.55em 0 0.05em 0; break-after: avoid; page-break-after: avoid; break-inside: avoid; }
+h3 { font-size: 9.3pt; font-weight: 700; font-style: italic; color: #333; margin: 0.1em 0 0.1em 0; break-after: avoid; page-break-after: avoid; }
+p { margin: 0 0 0.32em 0; }
+ul { margin: 0.2em 0 0.45em 0; padding-left: 1.2em; list-style: none; }
+li { position: relative; margin-bottom: 0.14em; }
+li::before { content: "▍"; position: absolute; left: -1em; color: #111; font-size: 0.8em; top: 0.15em; }
+strong { color: #111; font-weight: 700; }
+em { font-style: italic; color: #333; }
+a { color: #1a1a1a; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+blockquote { margin: 0.3em 0 0.65em 0; padding: 0.5em 0.9em 0.5em 1em; border-left: 4px solid #111; background: #f7f5f0; font-style: italic; font-size: 9pt; line-height: 1.4; }
+blockquote p { margin: 0; }
+hr { border: none; height: 0; margin: 0.85em 0; text-align: center; }
+hr::after { content: "❦"; font-family: "Charter", "Iowan Old Style", "Georgia", serif; font-size: 1.1em; color: #111; }
+</style>
+</head>
+<body>
+<header class="masthead"><div class="cvname">Robin Walter Scherler</div><div class="cvtag">Agentic Engineer · Production-LLM-Systeme &amp; Multi-Agent-Orchestrierung · 7+ Jahre Full-Stack</div><div class="cvmeta">Neidenstein · Deutschland · scherler89@gmail.com · agentic-engineer.online · linkedin.com/in/robin-s-223606136</div></header>
+<blockquote>
+<p>Ich baue und betreibe eigenes agentic Tooling und KI-Produkte über
+viele Projekte hinweg — vom Claude-Code-“Betriebssystem”, das ich
+täglich nutze, über Multi-Agent-Architekturen bis zu nativen KI-Apps —
+und teile dieses Wissen öffentlich. Darunter liegen 7+ Jahre
+Full-Stack-Engineering (Laravel, Magento, REST, CI/CD), die mir das
+Fundament geben, KI-Prototypen vom Schema bis zum Hosting in
+verantwortete Produktion zu überführen. Ich bin kein Web-Entwickler, der
+jetzt KI-Features einbaut, sondern jemand, der agentic Engineering als
+tägliche Arbeitsweise lebt und an Frontier-OSS aktiv mitarbeitet.</p>
+</blockquote>
+<h1 id="agentic-engineering-ki-projekte">Agentic Engineering &amp;
+KI-Projekte</h1>
+<h2
+id="claude-code-betriebssystem-eigenes-agentic-tooling-täglich-betrieben">Claude-Code-Betriebssystem
+— eigenes agentic Tooling, täglich betrieben</h2>
+<ul>
+<li>Eigenes Claude-Code-“Betriebssystem” gebaut und täglich genutzt: ~32
+Skills, 45+ Slash-Commands, 8+ research-synthetisierte Subagents, 9
+Hooks, eigene MCP-Server (vault-mcp Knowledge-Compiler, context-search)
+— ~70 % Originalarbeit, 591 Commits in 6 Monaten.</li>
+<li><strong>agent-forge</strong> gebaut — recherche-getriebener
+Subagent-Builder (parallele Research-Kanäle → Domänen-Wissen in
+System-Prompts, self-improving); <strong>orchestrator</strong> —
+Multi-Skill-Router mit Dependency-Graph; Session-Crash-Recovery-Hooks
+und Git-Worktree-/Symlink-Architektur über 20+ Repos.</li>
+</ul>
+<h2
+id="brandcite-multi-agent-knowledge-graph-plattform-in-entwicklung">brandcite
+— Multi-Agent-Knowledge-Graph-Plattform (in Entwicklung)</h2>
+<ul>
+<li>Multi-Agent-Plattform für Online-Sichtbarkeit gebaut (91 Commits):
+Claude-Squad-Orchestrierung über MCP, Crawl4AI-Web-Extraktion,
+Neo4j-Knowledge-Graph, deterministische Validierungsstufe gegen
+Halluzinationen.</li>
+<li>Docker-first (Next.js, FastAPI, Neo4j, Redis); aktiver Prototyp, von
+Architektur bis Test-Infrastruktur eigenverantwortet.</li>
+</ul>
+<h2 id="jobs-macos-voice-to-text-ai-agent">jobs — macOS Voice-to-Text
+AI-Agent</h2>
+<ul>
+<li>Native MenuBar-App gebaut (Swift, The Composable Architecture, 12
+Feature-Reducer, 29 Dependency-Clients): Hotkey → Transkription →
+OpenRouter-Agent → Auto-Paste in die aktive App; Owner über 485+
+Commits, ~92 % production-ready.</li>
+<li>Hybride Dual-Transkription: Apple Speech online + FluidAudio
+Parakeet V3 lokal, mit konfigurierbaren Agenten (Hotkeys, Modelle,
+System-Prompts) und LLM-Context-Review.</li>
+</ul>
+<h2 id="iaar-test-validierungs-framework-für-agentic-systeme">iaar —
+Test-/Validierungs-Framework für agentic Systeme</h2>
+<ul>
+<li>Async Python-Framework gebaut, das die Claude-Code-SDK gegen
+MCP-Server validiert (Session-Tests, parallele Tool-Validierung über
+mehrere MCP-Server, strukturiertes Logging) — systematische
+Qualitätssicherung für agentic Pipelines.</li>
+</ul>
+<h2 id="weitere-eigenprojekte-auswahl">Weitere Eigenprojekte
+(Auswahl)</h2>
+<ul>
+<li><strong>cmux-tmux-workflow</strong> (Pure Bash, 23 Commits) —
+Session-Orchestrator für parallele Agenten: Snapshot/Restore/Fork und
+benannte Multi-Agent-Workflows (CTFlow). <strong>video-chat</strong> (44
+Commits) — progressive AI-Video-Streaming (Runway ML),
+“stream-as-you-generate”. Dazu 20+ weitere Repos eigener Tools,
+Infrastruktur und Experimente — durchgängig git-belegte
+Eigenarbeit.</li>
+</ul>
+<h1 id="open-source-beiträge">Open-Source-Beiträge</h1>
+<ul>
+<li><strong>Hermes Agent</strong> (Nous Research) — zum Auth-Subsystem
+beigetragen (26 Commits): JWT-/Refresh-Logik, OAuth-Fallback,
+Token-Rotation, CI-Tests.</li>
+<li><strong>Anthropic Claude-Code-SDK (Python)</strong> — Infrastruktur
+beigetragen (~39 Commits): Docker-Orchestrierung, CI/CD,
+Type-Checking-Pipeline, Pre-Commit-Hooks.</li>
+<li><strong>Pi</strong> (Mario Zechner) — 2 gemergte Upstream-Bugfixes
+(bash-tool error handling mit Tests, #479).
+<strong>claudecodeui</strong> — Beiträge zur Claude-Code-Web-UI (27
+Commits). <strong>donna</strong> — Distribution-/Release-Planung (78
+Commits).</li>
+</ul>
+<h1 id="öffentliches-wissen">Öffentliches Wissen</h1>
+<ul>
+<li>Teile laufend Praxiswissen zu Agentic Engineering auf LinkedIn — 78
+Beiträge (Juni 2025 – Juni 2026): Context Engineering,
+Claude-Code-Multi-Agent-Orchestrierung, Token- und Kosten-Strategie,
+AI-First-Produktdenken. (linkedin.com/in/robin-s-223606136)</li>
+</ul>
+<h1 id="berufserfahrung">Berufserfahrung</h1>
+<blockquote>
+<p>7+ Jahre Full-Stack-Engineering bilden das Fundament, auf dem die
+agentic Arbeit aufsetzt — Schema-Design, REST-Integration, CI/CD und
+Produktionsbetrieb, die KI-Prototypen in verantwortete Produktion
+überführbar machen.</p>
+</blockquote>
+<h2
+id="software-engineer-change-it-solutions-gmbh-homeoffice-102024-012025">Software
+Engineer — Change IT Solutions GmbH · Homeoffice · 10/2024 –
+01/2025</h2>
+<ul>
+<li>Entwicklungsumgebung von lokalem Apache/MySQL auf Docker Compose
+migriert — einheitliche Bedingungen fürs gesamte Team.</li>
+<li>Bestehende APIs auf Performance und Docker-Kompatibilität optimiert;
+Big-Data-Konzept und Evaluierung von KI-Einsatzszenarien zur
+Prozessautomatisierung erstellt.</li>
+</ul>
+<h2
+id="software-engineer-rissc-solutions-gmbh-homeoffice-022018-072024">Software
+Engineer — Rissc Solutions GmbH · Homeoffice · 02/2018 – 07/2024</h2>
+<ul>
+<li>Maßgeschneiderten Web2Print-Editor für individualisierbare Produkte
+konzipiert und kontinuierlich erweitert (Laravel + Magento); RESTful
+APIs zwischen Web-Editor, Druckinfrastruktur und Magento-Shops
+gebaut.</li>
+<li>Mehrere Magento-2-Shops eigenverantwortet: Customization-Tool als
+Plugin, dynamische Produktkonfigurationen, Multi-Store,
+Payment-Gateways, Sicherheitsupdates.</li>
+<li>CI/CD-Pipeline mit Git + Bitbucket betrieben (Feature-Branches,
+Hotfixes, Releases), Code-Reviews per Pull Request,
+Produktions-Monitoring und Backups verantwortet.</li>
+</ul>
+<h2 id="full-stack-engineer-karlsruhe-062017-122017">Full-Stack Engineer
+· Karlsruhe · 06/2017 – 12/2017</h2>
+<ul>
+<li>Maßgeschneiderte Web-Lösungen für Großkunden der
+Telekommunikationsbranche entwickelt: Deployment, Integration und
+Testing.</li>
+<li>Backend in PHP 5.6 mit Zend Framework und MySQL gebaut; Frontend mit
+JavaScript (jQuery/AJAX) und Zend/Smarty-Templating nach
+MVC-Architektur.</li>
+</ul>
+<h2
+id="full-stack-engineer-redhotmagma-gmbh-stuttgart-092016-032017">Full-Stack
+Engineer — redhotmagma GmbH · Stuttgart · 09/2016 – 03/2017</h2>
+<ul>
+<li>Moderne Web-Anwendungen in agilen Teams entwickelt (Jira, Bitbucket,
+Confluence; Git/SourceTree, Plugin-Entwicklung).</li>
+<li>Frontend mit HTML5, CSS3, JavaScript inkl. React und Three.js
+gebaut; mobile Apps mit React Native.</li>
+</ul>
+<h1 id="fähigkeiten">Fähigkeiten</h1>
+<p><strong>Agentic &amp; LLM:</strong> Claude Code ■■■■■ ·
+Multi-Agent-Orchestrierung ■■■■■ · Prompt- &amp; Context-Engineering
+■■■■■ · MCP-Server (eigene + Integration) ■■■■□ · LLM-Kosten-Kaskaden /
+Modellwahl ■■■■□ · OpenRouter / OpenAI-SDK ■■■■□ · RAG ■■■■□</p>
+<p><strong>Programmiersprachen:</strong> Python ■■■■□ · PHP (5.6–8.3)
+■■■■■ · TypeScript ■■■■□ · JavaScript ■■■■□ · Swift ■■■□□ · Bash
+■■■■□</p>
+<p><strong>Backend &amp; Infrastruktur:</strong> FastAPI · Laravel ■■■■□
+· RESTful APIs ■■■■■ · MySQL/SQL · PostgreSQL · Neo4j · SQLite · Redis ·
+Docker / Docker Compose ■■■■■ · CI/CD (GitHub Actions, Bitbucket
+Pipelines) · self-hosted VPS / Cloudflare-Tunnel · Git ■■■■■</p>
+<p><strong>Web:</strong> Next.js · Vue.js · React · Magento 2 · HTML/CSS
+· Node.js</p>
+<p><strong>Sprachen:</strong> Deutsch · Englisch · Spanisch ·
+Katalanisch</p>
+<h1 id="ausbildung">Ausbildung</h1>
+<ul>
+<li><strong>Fachinformatiker für Anwendungsentwicklung</strong> — Peter
+Kwasny GmbH, Gundelsheim · 2013 – 2016</li>
+<li><strong>Técnico en Sistemas Microinformáticos y Redes</strong> — IES
+Marcos Zaragoza, Villajoyosa (ES) · 2010 – 2013</li>
+<li><strong>Mittlere Reife (ESO)</strong> — IES Castelló d’Empúries,
+Katalonien (ES) · 2003 – 2008</li>
+</ul>
+</body>
+</html>

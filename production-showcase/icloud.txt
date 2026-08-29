@@ -1,0 +1,17 @@
+# Was nach iCloud geht — und damit auf dem iPhone verfügbar ist.
+# Eine Datei je Zeile, Namen aus out/. Zeilen mit # sind Kommentare.
+#
+# Alles andere bleibt lokal in out/ liegen: Zwischenstände, Layout-Varianten
+# zum Vergleichen, veraltete Sprachfassungen.
+
+# --- Lebenslauf lang, deutsch ---
+cv-robin-de-dark-photo.pdf
+cv-robin-de-editorial-photo.pdf
+
+# --- Lebenslauf kurz, deutsch ---
+cv-robin-kurz-de-compact-photo.pdf
+cv-robin-kurz-de-loose-photo.pdf
+cv-robin-kurz-de-dark-photo.pdf
+
+# --- Arbeitsprobe ---
+writing-sample-de-dark.pdf

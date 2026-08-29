@@ -75,6 +75,7 @@ Thumbs.db
 
 # Project specific
 .python-version
+planning/claudecode/
 
 # Ignore content but keep directory structure
 !data/images/.gitkeep
@@ -102,3 +103,32 @@ data/original/media/image1.png
 data/original/test.md
 data/pdfs/*.pdf
 output/*
+
+#external -claude
+.mcp.json
+
+# Vault Compiler (Vault Base) — alles in vault/
+vault/.obsidian/
+vault/.vault-state/
+vault/reports/
+vault/daily/
+
+# Erzeugte Lebenslauf-Artefakte — jederzeit aus samples/*.md reproduzierbar
+production-showcase/out/
+
+# Privates und Fremddokumente — gehören nicht in dieses Repo
+Nebenkostenabrechnung_2024.md
+Whitepaper_Multiagenten_komprimiert.pdf
+*_1_102_o.jpeg
+
+# Maschinenlokaler Zustand und Werkzeug-Konfiguration
+.initial
+.serena/
+.mcp.*.json
+settings.local.json
+logs/
+
+# Erzeugte Test- und Zwischenartefakte
+compression_test/
+img.png
+img_1.png
