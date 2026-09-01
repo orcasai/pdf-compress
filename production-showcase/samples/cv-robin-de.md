@@ -22,6 +22,20 @@ Die Arbeitsteilung dahinter ist keine Einbahnstraße: Ich setze Rahmen, Muster u
 
 ---
 
+### Adaptive Creativity First — wie ich in der KI-Zeit entwickle
+
+Die etablierten Muster setzen voraus, dass man vorher weiß, was man baut. API-first verlangt festgezurrte Schnittstellen, bevor das Produkt existiert; große Vorabplanung verlangt eine Idee, die sich nicht mehr ändert. Beides war richtig, solange eine Iteration Wochen kostete.
+
+Mit einem funktionierenden Agent-Harness kostet sie Stunden. Damit kehrt sich die Reihenfolge um: **Die Architektur folgt der Erkenntnis, nicht der Annahme.** Ich baue, was als Nächstes gebraucht wird, lerne im Betrieb, was es wirklich sein muss, und ziehe die Architektur nach — nicht als Notlösung, sondern als Verfahren.
+
+**Das ist das Gegenteil von unkontrolliertem Drauflosbauen.** Jedes Inkrement hat eine Spezifikation und ein Abnahmekriterium, bevor es Code hat. Der Unterschied liegt im Horizont: Der Vertrag gilt für das nächste Feature, nicht für das ganze Produkt. Spezifikation im Kleinen, Evolution im Großen.
+
+Belegbar im eigenen Produkt: 240 von 1.684 Commits sind reine Spezifikation und Abnahme — verteilt über drei Monate statt gebündelt in einer Entwurfsphase. Die Schnittstellen meines MCP-Servers standen erst fest, als klar war, was Agenten daraus lesen wollen; vorher wären sie geraten gewesen.
+
+Wer das *Vibe Coding* nennt, hat den Unterschied nicht gesehen: Dort ersetzt Geschwindigkeit die Disziplin, hier ermöglicht sie erst welche.
+
+---
+
 ### Parallel arbeiten — planen, laufen lassen, weiterbauen
 
 Meine Arbeitsweise ist auf Parallelität ausgelegt: Spezifikation schreiben, einen Agenten daraufsetzen, währenddessen am nächsten Strang weiterbauen. Nachweisbar aus den Sitzungsdaten der letzten drei Monate:
@@ -116,7 +130,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Sprachen & Web-Stack:** Swift · Python · TypeScript / Node.js · JavaScript · PHP (5.6–8.3) · Bash / Shell · SQL · HTML / CSS · FastAPI / Starlette / uvicorn · Pydantic · Jinja2 · React · Vue.js · Laravel · Magento 2 · React Native · Three.js · Electron · Playwright · Chrome DevTools Protocol (CDP) · PyMuPDF · Pillow · Slack Bolt · ffmpeg · Bun · zod
 
-**Methoden:** Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP
+**Methoden:** Adaptive Creativity First (Architektur folgt der Erkenntnis) · Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP
 
 **Domänen:** Multimodale KI auf dem Gerät · On-Device-Inferenz & Local-First-Architektur · agentische Entwicklungssysteme & LLM-Ops · macOS-/iOS-Produktentwicklung · Recruitment-Tech / ATS-Automatisierung (DACH)
 
