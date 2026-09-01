@@ -24,15 +24,11 @@ Die Arbeitsteilung dahinter ist keine Einbahnstraße: Ich setze Rahmen, Muster u
 
 ### Wie Entwicklung sich gerade verschiebt
 
-Viele Teams stehen zurzeit vor derselben Frage. Die Werkzeuge sind schneller geworden, die Verfahren nicht: Vorab festgelegte Schnittstellen und Entwürfe stammen aus einer Zeit, in der eine Iteration Wochen kostete — sie später zu ändern war teurer, als sie vorher richtig zu raten. Wer diese Absicherung aufgibt, landet beim ungeplanten Drauflosbauen. Zwischen beidem scheint wenig zu liegen.
+Die Werkzeuge sind schneller geworden, die Verfahren nicht. Vorab festgelegte Schnittstellen stammen aus einer Zeit, in der eine Iteration Wochen kostete — sie später zu ändern war teurer, als sie vorher richtig zu raten. Mit einem funktionierenden Agent-Harness kostet sie Stunden, und die Rechnung dreht sich um.
 
-Die Frage ist aber nicht, welches der beiden Verfahren recht behält, sondern was sich verändert hat: **der Preis einer Iteration.** Mit einem funktionierenden Agent-Harness kostet sie Stunden statt Wochen. Damit verliert die Vorabfestlegung ihren Grund — sie war nie das Ziel, sondern der Schutz vor teuren Korrekturen.
+An die Stelle der Vorabfestlegung tritt keine Beliebigkeit, sondern ein kürzerer Vertrag: Spezifikation und Abnahmekriterium pro Inkrement statt fürs ganze Produkt. **Die Architektur folgt damit der Erkenntnis statt der Annahme** — sichtbar an 240 von 1.684 Commits, die reine Spezifikation und Abnahme sind und über drei Monate verteilt liegen statt in einer Entwurfsphase gebündelt.
 
-An ihre Stelle tritt keine Beliebigkeit, sondern ein kürzerer Vertrag: Jedes Inkrement bekommt Spezifikation und Abnahmekriterium, bevor es Code hat — nur gilt der Vertrag für das nächste Feature, nicht für das ganze Produkt. **Die Architektur folgt damit der Erkenntnis statt der Annahme**, und die Disziplin bleibt an jedem einzelnen Schritt.
-
-So arbeite ich seit anderthalb Jahren. Belegbar im eigenen Produkt: 240 von 1.684 Commits sind reine Spezifikation und Abnahme — verteilt über drei Monate statt gebündelt in einer Entwurfsphase. Die Schnittstellen meines MCP-Servers standen erst fest, als klar war, was Agenten daraus lesen wollen; vorher wären sie geraten gewesen.
-
-Ich nenne das **Adaptive Creativity First**: weniger ein neues Muster als die Konsequenz daraus, dass Erkenntnis inzwischen billiger ist als Annahme.
+Ich nenne es **Iteration-First**: weniger ein neues Muster als die Konsequenz daraus, dass Erkenntnis inzwischen billiger ist als Annahme.
 
 ---
 
@@ -130,7 +126,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Sprachen & Web-Stack:** Swift · Python · TypeScript / Node.js · JavaScript · PHP (5.6–8.3) · Bash / Shell · SQL · HTML / CSS · FastAPI / Starlette / uvicorn · Pydantic · Jinja2 · React · Vue.js · Laravel · Magento 2 · React Native · Three.js · Electron · Playwright · Chrome DevTools Protocol (CDP) · PyMuPDF · Pillow · Slack Bolt · ffmpeg · Bun · zod
 
-**Methoden:** Adaptive Creativity First (Architektur folgt der Erkenntnis) · Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP
+**Methoden:** Iteration-First (Architektur folgt der Erkenntnis) · Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP
 
 **Domänen:** Multimodale KI auf dem Gerät · On-Device-Inferenz & Local-First-Architektur · agentische Entwicklungssysteme & LLM-Ops · macOS-/iOS-Produktentwicklung · Recruitment-Tech / ATS-Automatisierung (DACH)
 
