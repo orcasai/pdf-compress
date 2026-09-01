@@ -22,17 +22,17 @@ Die Arbeitsteilung dahinter ist keine Einbahnstraße: Ich setze Rahmen, Muster u
 
 ---
 
-### Adaptive Creativity First — wie ich in der KI-Zeit entwickle
+### Wie Entwicklung sich gerade verschiebt
 
-Die etablierten Muster setzen voraus, dass man vorher weiß, was man baut. API-first verlangt festgezurrte Schnittstellen, bevor das Produkt existiert; große Vorabplanung verlangt eine Idee, die sich nicht mehr ändert. Beides war richtig, solange eine Iteration Wochen kostete.
+Viele Teams stehen zurzeit vor derselben Frage. Die Werkzeuge sind schneller geworden, die Verfahren nicht: Vorab festgelegte Schnittstellen und Entwürfe stammen aus einer Zeit, in der eine Iteration Wochen kostete — sie später zu ändern war teurer, als sie vorher richtig zu raten. Wer diese Absicherung aufgibt, landet beim ungeplanten Drauflosbauen. Zwischen beidem scheint wenig zu liegen.
 
-Mit einem funktionierenden Agent-Harness kostet sie Stunden. Damit kehrt sich die Reihenfolge um: **Die Architektur folgt der Erkenntnis, nicht der Annahme.** Ich baue, was als Nächstes gebraucht wird, lerne im Betrieb, was es wirklich sein muss, und ziehe die Architektur nach — nicht als Notlösung, sondern als Verfahren.
+Die Frage ist aber nicht, welches der beiden Verfahren recht behält, sondern was sich verändert hat: **der Preis einer Iteration.** Mit einem funktionierenden Agent-Harness kostet sie Stunden statt Wochen. Damit verliert die Vorabfestlegung ihren Grund — sie war nie das Ziel, sondern der Schutz vor teuren Korrekturen.
 
-**Das ist das Gegenteil von unkontrolliertem Drauflosbauen.** Jedes Inkrement hat eine Spezifikation und ein Abnahmekriterium, bevor es Code hat. Der Unterschied liegt im Horizont: Der Vertrag gilt für das nächste Feature, nicht für das ganze Produkt. Spezifikation im Kleinen, Evolution im Großen.
+An ihre Stelle tritt keine Beliebigkeit, sondern ein kürzerer Vertrag: Jedes Inkrement bekommt Spezifikation und Abnahmekriterium, bevor es Code hat — nur gilt der Vertrag für das nächste Feature, nicht für das ganze Produkt. **Die Architektur folgt damit der Erkenntnis statt der Annahme**, und die Disziplin bleibt an jedem einzelnen Schritt.
 
-Belegbar im eigenen Produkt: 240 von 1.684 Commits sind reine Spezifikation und Abnahme — verteilt über drei Monate statt gebündelt in einer Entwurfsphase. Die Schnittstellen meines MCP-Servers standen erst fest, als klar war, was Agenten daraus lesen wollen; vorher wären sie geraten gewesen.
+So arbeite ich seit anderthalb Jahren. Belegbar im eigenen Produkt: 240 von 1.684 Commits sind reine Spezifikation und Abnahme — verteilt über drei Monate statt gebündelt in einer Entwurfsphase. Die Schnittstellen meines MCP-Servers standen erst fest, als klar war, was Agenten daraus lesen wollen; vorher wären sie geraten gewesen.
 
-Wer das *Vibe Coding* nennt, hat den Unterschied nicht gesehen: Dort ersetzt Geschwindigkeit die Disziplin, hier ermöglicht sie erst welche.
+Ich nenne das **Adaptive Creativity First**: weniger ein neues Muster als die Konsequenz daraus, dass Erkenntnis inzwischen billiger ist als Annahme.
 
 ---
 
