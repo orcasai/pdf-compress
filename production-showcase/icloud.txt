@@ -20,3 +20,14 @@ cv-robin-kurz-de-dark-photo-ai.pdf
 
 # --- Arbeitsprobe ---
 writing-sample-de-dark.pdf
+
+# --- Lebenslauf lang, englisch ---
+cv-robin-en-dark-photo.pdf
+cv-robin-en-editorial-photo.pdf
+cv-robin-en-dark-photo-ai.pdf
+
+# --- Lebenslauf kurz, englisch ---
+cv-robin-kurz-en-compact-photo.pdf
+cv-robin-kurz-en-loose-photo.pdf
+cv-robin-kurz-en-dark-photo.pdf
+cv-robin-kurz-en-dark-photo-ai.pdf

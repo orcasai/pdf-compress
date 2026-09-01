@@ -44,16 +44,16 @@ Firmenname hinein, strukturiertes Profil mit offenen Stellen heraus. Sechs-Model
 
 ### Arbeitsweise
 
+- **Iteration-First.** Vorab festgelegte Schnittstellen stammen aus einer Zeit, in der eine Iteration Wochen kostete; mit einem Agent-Harness kostet sie Stunden. Spezifikation und Abnahmekriterium gelten pro Inkrement statt fürs ganze Produkt — die Architektur folgt der Erkenntnis statt der Annahme. 240 von 1.684 Commits sind reine Spezifikation und Abnahme.
 - **Parallel bauen.** 167 Agenten-Sessions über 119 Terminal-Panes, bis zu 17 an einem Arbeitstag; 14 aktive Git-Worktrees nebeneinander, jeder Strang in eigenem Arbeitsverzeichnis.
 - **Guards machen unbeaufsichtigte Läufe möglich.** Vorrichtungen, die falsche Abzweigungen vor dem Werkzeugaufruf abfangen. Ohne sie skaliert Parallelität nicht — sie vervielfacht nur die Fehler.
-- **Spezifikation vor Code.** 240 von 1.684 Commits betreffen ausschließlich Spezifikation und Abnahme.
 - **Wiederverwendung statt Wiederholung.** Spezifikationen, Abnahmelisten, Hooks und Slash-Commands liegen projektübergreifend an einer Stelle und wirken in jedem Repository.
 
 ---
 
 ### Fähigkeiten
 
-**Agentic & KI:** Claude Code (Hooks, Subagenten, Slash-Commands, Headless) · MCP — eigene Server bauen (TypeScript, FastMCP) und als Client konsumieren · Spec-Driven Development · Context & Prompt Engineering · Multi-Agent-Orchestrierung · parallele Agenten-Sessions (tmux, Git-Worktrees) · Evals & Laufzeit-Abnahme · RAG · OpenRouter-Kaskaden & Failover · LLM-Ops · Hermes Agent · OpenClaw / NemoClaw · Cursor · Codex
+**Agentic & KI:** Claude Code (Hooks, Subagenten, Slash-Commands, Headless) · MCP — eigene Server bauen (TypeScript, FastMCP) und als Client konsumieren · Iteration-First · Spec-Driven Development · Context & Prompt Engineering · Multi-Agent-Orchestrierung · parallele Agenten-Sessions (tmux, Git-Worktrees) · Evals & Laufzeit-Abnahme · RAG · OpenRouter-Kaskaden & Failover · LLM-Ops · Hermes Agent · OpenClaw / NemoClaw · Cursor · Codex
 
 **macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable) · SwiftUI · AppKit · TCA · GRDB (WAL, FTS5) · SpeechAnalyzer · AVFoundation / CoreAudio · ScreenCaptureKit · Vision (OCR) · CryptoKit · Global Hotkeys & MenuBar-Apps · SwiftPM & XcodeGen · TCC & App-Sandbox · Developer ID, codesign & notarytool · Sparkle · launchd
 
