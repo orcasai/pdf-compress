@@ -282,6 +282,14 @@ echo
 echo "Outputs:"
 ls -la "$OUT"/*-compact.pdf "$OUT"/*-loose.pdf "$OUT"/*-dark.pdf "$OUT"/*-editorial.pdf 2>/dev/null
 
+# Foto in die frisch gebauten Lebenslauf-PDFs stempeln, bevor gespiegelt wird.
+# Ohne diesen Schritt liegen in iCloud aktuelle Basis-PDFs neben veralteten
+# Versandfassungen — also genau die falschen.
+if compgen -G "$OUT"/cv-robin-*.pdf >/dev/null && command -v uv >/dev/null 2>&1; then
+  (cd .. && uv run python production-showcase/add_photo.py >/dev/null 2>&1) \
+    && echo "Foto: Versandfassungen neu gestempelt"
+fi
+
 # Fertige PDFs nach iCloud spiegeln, damit sie auf dem iPhone verfügbar sind.
 # iCloud folgt keinen Symlinks — deshalb kopieren statt verlinken.
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Bewerbung"

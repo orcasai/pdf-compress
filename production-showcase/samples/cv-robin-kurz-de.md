@@ -24,13 +24,13 @@ Davor zehn Jahre Web, im Kern PHP, Laravel und Magento 2. Der Sprung ging nicht 
 
 **Aktuelles macOS-Produkt — multimodale KI-Erfassung, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
 
-97.000 Zeilen Swift 6, 1.684 Commits, 254 Test-Dateien in drei Monaten. Verarbeitet Sprache, Bildschirmvideo, Screenshots mit Texterkennung und Transkription — jede Modalität mit eigenem Pfad, keine davon in einer Cloud. **16.318 erfasste Einträge an 84 aktiven Tagen, ein einziger Nutzer: ich.** Keine Seed-Daten, echter Dauerbetrieb.
+97.000 Zeilen Swift 6, 1.684 Commits, 254 Test-Dateien in drei Monaten. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad. **16.318 erfasste Einträge an 84 aktiven Tagen, ein einziger Nutzer: ich.** Keine Seed-Daten, echter Dauerbetrieb.
 
 - **Datenhoheit als Bauweise.** Transkription lokal über Apples SpeechAnalyzer, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad. Getrennte Datenbank-Domänen statt einer mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. **Trotzdem für KI nutzbar** — ein eigener MCP-Server öffnet den Bestand strukturiert für Agenten, ohne dass ein Byte das Gerät verlässt.
 - **Auslieferungsreife als eigene Disziplin.** Developer-ID-Signatur, Notarisierung, Sparkle-Appcast mit EdDSA, Diagnose-Rückkanal aus installierten Ständen. Observability über OpenTelemetry/OTLP in Grafana Tempo.
 - **Abnahme als Infrastruktur.** 4.800 Zeilen Abnahmeplan, Laufzeit-Tests in wegwerfbaren Tart-VMs: Der Agent klont die VM, bedient die Oberfläche per AppleScript und prüft selbst.
 
-*Zum Produkt sage ich vor einer Zusammenarbeit nichts weiter — ich zeige es im Gespräch gern live.*
+*Zum Produkt sage ich vor einer Zusammenarbeit nichts weiter — bei beidseitigem Interesse zeige ich es live.*
 
 **Hermes-Companion — macOS-MenuBar-App mit iOS-Begleiter · alleiniger Entwickler · 11/2025 – 06/2026**
 
@@ -38,7 +38,7 @@ Davor zehn Jahre Web, im Kern PHP, Laravel und Magento 2. Der Sprung ging nicht 
 
 **[agentic-engineer.online](https://agentic-engineer.online) — öffentlich testbares Recruiting-Werkzeug · 04 – 05/2026, seither im Betrieb**
 
-Firmenname hinein, strukturiertes Profil mit offenen Stellen heraus. Sechs-Modell-Kaskade mit **100 % Antwortgarantie bei unter 1 Cent pro Lead**; acht ATS-Adapter, vier live verifiziert; 72 Unit- und 4 E2E-Tests; Mobile-Navigation von 8,7 s auf 1,5 s nach Cloudflare-Edge-Tuning. Python, FastAPI, SQLite auf Hetzner-VPS hinter Cloudflare-Tunnel — ausgeliefert über eine Pipeline aus zwölf Bausteinen mit Snapshot-Rollback, die ab blankem Ubuntu in rund drei Minuten durchläuft.
+Firmenname hinein, strukturiertes Profil mit offenen Stellen heraus. Sechs-Modell-Kaskade mit **im gemessenen Betrieb 100 % Antwortquote bei unter 1 Cent pro Lead**; acht ATS-Adapter, vier live verifiziert; 72 Unit- und 4 E2E-Tests; Mobile-Navigation von 8,7 s auf 1,5 s nach Cloudflare-Edge-Tuning. Python, FastAPI, SQLite auf Hetzner-VPS hinter Cloudflare-Tunnel — ausgeliefert über eine Pipeline aus zwölf Bausteinen mit Snapshot-Rollback, die ab blankem Ubuntu in rund drei Minuten durchläuft.
 
 ---
 

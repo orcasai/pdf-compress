@@ -7,11 +7,16 @@
 # --- Lebenslauf lang, deutsch ---
 cv-robin-de-dark-photo.pdf
 cv-robin-de-editorial-photo.pdf
+cv-robin-de-dark-photo-ai.pdf
+cv-robin-de-editorial-photo-ai.pdf
 
 # --- Lebenslauf kurz, deutsch ---
 cv-robin-kurz-de-compact-photo.pdf
 cv-robin-kurz-de-loose-photo.pdf
 cv-robin-kurz-de-dark-photo.pdf
+cv-robin-kurz-de-compact-photo-ai.pdf
+cv-robin-kurz-de-loose-photo-ai.pdf
+cv-robin-kurz-de-dark-photo-ai.pdf
 
 # --- Arbeitsprobe ---
 writing-sample-de-dark.pdf
