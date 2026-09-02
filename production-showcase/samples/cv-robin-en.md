@@ -10,7 +10,7 @@ Neidenstein, Germany · scherler89@gmail.com · +49 1627308662 · Born 24/08/198
 
 ### About Me
 
-> **On 27 November 2025 I wrote my first line of Swift. Nine months later there are 145,000 lines of Swift 6 in two products of my own** — 2,327 commits, sole developer, every feature with a specification and runtime acceptance.
+> **On 27 November 2025 I wrote my first line of Swift. Nine months later there are 158,000 lines of Swift 6 in three products of my own** — 2,651 commits, sole developer, every feature with a specification and runtime acceptance.
 
 Before that, ten years of web work, mainly PHP, Laravel and Magento 2. The jump did not come from typing faster but from a different way of working. I write specifications, interface contracts and acceptance criteria — the implementation is produced agentically against them. The devices that make this reliable I built myself: guards that intervene before the tool call, acceptance in disposable VMs, my own MCP server as the interface from my agents onto my product.
 
@@ -26,7 +26,7 @@ The division of labour behind it runs both ways: I set the frame, the patterns a
 
 The tools have become faster, the methods have not. Interfaces fixed in advance come from a time when one iteration cost weeks — changing them later was more expensive than guessing them right up front. With a working agent harness it costs hours, and the arithmetic reverses.
 
-What replaces up-front commitment is not arbitrariness but a shorter contract: specification and acceptance criterion per increment instead of for the whole product. **Architecture therefore follows insight rather than assumption** — visible in 240 of 1,684 commits that are pure specification and acceptance, spread across three months instead of bundled into a design phase.
+What replaces up-front commitment is not arbitrariness but a shorter contract: specification and acceptance criterion per increment instead of for the whole product. **Architecture therefore follows insight rather than assumption** — visible in 264 of 1,815 commits that are pure specification and acceptance, spread across three months instead of bundled into a design phase.
 
 I call it **Iteration-First**: less a new pattern than the consequence of insight now being cheaper than assumption.
 
@@ -55,14 +55,15 @@ That parallelises knowledge work: several contexts open at once, without a query
 
 **Current macOS product — multimodal AI capture, entirely on device · sole developer · since 05/2026**
 
-97,000 lines of Swift 6, 1,684 commits, 254 test files in three months — roughly 1,000 lines of production code per day, every day, specification and acceptance included. Several data modalities, each with its own capture, processing and persistence path — all on device, no third party in the data path.
+101,000 lines of Swift 6, 1,815 commits, 267 test files in three months — roughly 1,000 lines of production code per day, every day, specification and acceptance included. Several data modalities, each with its own capture, processing and persistence path — all on device, no third party in the data path.
 
-- **Live operation as a continuous test — from a single user.** 16,318 captured entries across 84 active days, 194 per day on average, 475 on the peak day. No seed or test data: developer and sole user in one person, every defect hits me the same day.
-- **Specification before code.** 240 of the 1,684 commits concern specification and acceptance only. Every feature runs spec → implementation plan → runtime acceptance.
-- **Acceptance as infrastructure — carried out by the agent itself.** Runtime tests in disposable Tart VMs that recreate the zero state at will: first install, Gatekeeper and permissions reproducible rather than one-off. The agent clones the VM, seeds the starting state, **operates the interface via AppleScript and checks the result itself** — every work strand with its own test environment, several in parallel. An acceptance plan of 4,800 lines, plus a separate list for everything only time can answer.
+- **Live operation as a continuous test — from a single user.** 16,785 captured entries across 89 active days, 189 per day on average, 475 on the peak day. No seed or test data: developer and sole user in one person, every defect hits me the same day.
+- **Specification before code.** 264 of the 1,815 commits concern specification and acceptance only. Every feature runs spec → implementation plan → runtime acceptance.
+- **Acceptance as infrastructure — carried out by the agent itself.** Runtime tests in disposable Tart VMs that recreate the zero state at will: first install, Gatekeeper and permissions reproducible rather than one-off. The agent clones the VM, seeds the starting state, **operates the interface via AppleScript and checks the result itself** — every work strand with its own test environment, several in parallel. An acceptance plan of 5,300 lines, plus a separate list for everything only time can answer.
 - **Guards instead of rework.** Every defect that got through once becomes a device that rules it out — PreToolUse hooks that intervene before the tool call rather than reporting after the failure.
-- **Release readiness as its own discipline.** Developer ID signing, notarization, Sparkle appcast with EdDSA, diagnostics channel and crash reports from installed builds.
+- **Release readiness as its own discipline.** Developer ID signing, notarization, Sparkle appcast with EdDSA, diagnostics channel and crash reports from installed builds. One command builds the tester package — notarized DMG, signed CLI, MCP server, agent setup, README — in two flavours: silent for customers, with telemetry and its own update channel for the team; three update channels side by side, and notarization detects full and local mode itself. Two-machine operation accepted in the VM (20/20). Two delivery targets from one codebase via a build-configuration axis: a sandboxed App Store variant and a Developer ID variant; App Store submission prepared. Multi-user operation via OAuth2 on my own host is planned, triggered by the second external user.
 - **My own MCP server** (TypeScript) as the agent interface onto the product — my agents work productively against my own application.
+- **A second platform in five days.** My own iOS app with 9,100 lines of Swift 6 and 193 commits, from an empty project to the device. It hangs off the same interface as the MCP server and the macOS interface — one store, one interface, three consumers, one place for defects. Everything between the devices runs end-to-end encrypted over WireGuard in my own tailnet; the network boundary is the authorization, deliberately no second token. Write access is append-only, limited by a whitelist and idempotent by ID: a duplicate send changes nothing.
 - **Observability from day one:** OpenTelemetry/OTLP spans in Grafana Tempo, unified logging via OSLog.
 
 *How this comes together as a product I am happy to demonstrate live given mutual interest. One piece of evidence is already here, though: the system holds context over one's own work — ideas, experience, lines of thought — and this CV came out of exactly that. The figures above were read by an agent through its MCP server.*
@@ -116,7 +117,7 @@ The infrastructure behind my systems is a product in itself: twelve reusable blo
 
 **Agentic & AI:** Claude Code (hooks, subagents, slash commands, headless mode) · MCP — building own servers (TypeScript, FastMCP) and consuming as a client · Spec-Driven Development · Context Engineering · Prompt Engineering · Multi-Agent Orchestration · parallel agent sessions (tmux, Git worktrees) · Evals & runtime acceptance · RAG / LLM Knowledge Compiler · OpenRouter model cascades & failover · LLM Ops / OpenAI Wire Protocol gateways · Agentic Loops (ReAct) · Hermes Agent (Nous Research) · OpenClaw / NemoClaw · Cursor · Codex
 
-**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Rive · global hotkeys & menu-bar apps (NSStatusItem) · CGEvent / ApplicationServices · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC permissions & App Sandbox · Developer ID, codesign & notarytool · Sparkle (appcast, EdDSA) · LaunchAgents / launchd
+**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · HealthKit · CoreMotion · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Rive · global hotkeys & menu-bar apps (NSStatusItem) · CGEvent / ApplicationServices · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC permissions & App Sandbox · Developer ID, codesign & notarytool · Sparkle (appcast, EdDSA) · LaunchAgents / launchd
 
 **Architecture & Data:** domain-separated databases with a transfer journal · polymorphic entities across entry types · SQLite (WAL, FTS5) · GRDB · PostgreSQL · MySQL / MariaDB · Redis · Elasticsearch · JSON / JSON-LD / Schema.org · XML · YAML · Markdown · CSV
 
@@ -126,7 +127,7 @@ The infrastructure behind my systems is a product in itself: twelve reusable blo
 
 **Languages & Web Stack:** Swift · Python · TypeScript / Node.js · JavaScript · PHP (5.6–8.3) · Bash / Shell · SQL · HTML / CSS · FastAPI / Starlette / uvicorn · Pydantic · Jinja2 · React · Vue.js · Laravel · Magento 2 · React Native · Three.js · Electron · Playwright · Chrome DevTools Protocol (CDP) · PyMuPDF · Pillow · Slack Bolt · ffmpeg · Bun · zod
 
-**Methods:** Iteration-First (architecture follows insight) · Spec-Driven Development · acceptance-driven engineering · parallelism through isolated working directories · Context Engineering (target state) · idempotent deploy pipelines & snapshot rollback · PRD-first feature development · privacy by architecture / data sovereignty · CLI-over-MCP
+**Methods:** Iteration-First (architecture follows insight) · Spec-Driven Development · acceptance-driven engineering · parallelism through isolated working directories · Context Engineering (target state) · idempotent deploy pipelines & snapshot rollback · PRD-first feature development · privacy by architecture / data sovereignty · CLI-over-MCP · working with non-technical stakeholders
 
 **Domains:** multimodal AI on device · on-device inference & local-first architecture · agentic development systems & LLM Ops · macOS/iOS product engineering · recruitment tech / ATS automation (DACH)
 
@@ -153,10 +154,11 @@ The infrastructure behind my systems is a product in itself: twelve reusable blo
 
 **Multimodal AI on the user's own device · in daily use**
 
-Continuously accruing work data with a high personal-data content is the most sensitive material a work machine ever sees. The usual answer is encryption in the cloud. My answer is that the data never leaves the device in the first place.
+Continuously accruing work data with a high personal-data content is the most sensitive material a work machine ever sees. The usual answer is encryption in the cloud. My answer is that the data never leaves my own devices in the first place.
 
 - **Everything on device.** Transcription through Apple's SpeechAnalyzer locally, persistence in SQLite with a full-text index, no backend in the data path, no third party, no model download. This decision was deliberate — not for want of infrastructure, but because it is the right one for this data.
 - **Domains as boundaries.** Separate databases instead of one with a tenant column: a query *cannot* read across a boundary. Data protection as a construction method rather than a setting.
+- **What moves, moves encrypted.** Device to device over WireGuard in my own tailnet, no third-party server in between; update, diagnostics and telemetry channels over TLS; backups as authenticated encrypted archives, key in the keychain — readable with the system's own tools in an emergency, without the product.
 - **And usable by AI regardless.** A dedicated MCP server opens the entire store to agents in structured form — locally, without a single byte leaving the device. Exactly the problem companies face under GDPR and the AI Act, solved in my own environment and proven in daily use.
 - **Local means finite — so retention belongs in the architecture.** Keeping everything on the device leaves no elastic storage. A cleanup service has run in the product since day one; the rolling pruner deliberately works **without VACUUM**, because that would briefly need twice the space. Cleanup runs off the main thread, build artefacts and disposable VMs have defined lifecycles.
 - **The platform is not a compromise but a prerequisite.** All of it runs, parallel VM test environments included, on a single Mac mini with 256 GB. On-device inference, Tart VMs and notarization exist only here — not the most resources, but the right environment, deliberately chosen.
@@ -166,11 +168,12 @@ Continuously accruing work data with a high personal-data content is the most se
 
 ### What I Bring — and Where It Fits
 
-I have walked the entire path in an environment I am fully responsible for: understood the problem, built the system, put it into production, operated it, measured it, sharpened it. No team, no safety net, with AI as the amplifier.
+I have walked the entire path in an environment I am fully responsible for: understood the problem, built the system, put it into production, operated it, measured it, sharpened it. No development team, no safety net, with AI as the amplifier.
 
 - **Shipping instead of demonstrating.** Signed and notarized distribution, my own update channel, a diagnostics channel from installed builds. A prototype that only runs in the demo would have hit me the same day — I was developer and user in one person.
-- **Evaluating instead of hoping.** Every feature has an acceptance criterion before it has code: 4,800 lines of acceptance plan, runtime tests in disposable VMs, a separate list for everything only time can answer.
-- **Quickly effective in unfamiliar stacks.** From zero Swift to 145,000 lines in nine months — including the concurrency model, the data layer, system frameworks and the full signing and delivery chain. The language was the smallest part of it. What I do not yet know I approach the same way: patterns first, vocabulary after.
+- **Evaluating instead of hoping.** Every feature has an acceptance criterion before it has code: 5,300 lines of acceptance plan, runtime tests in disposable VMs, a separate list for everything only time can answer.
+- **Quickly effective in unfamiliar stacks.** From zero Swift to 158,000 lines in nine months — including the concurrency model, the data layer, system frameworks and the full signing and delivery chain. The language was the smallest part of it. What I do not yet know I approach the same way: patterns first, vocabulary after.
+- **Bringing non-technical people along.** My project partner is not a developer. Ideas, objections and test impressions arrive in everyday language; what goes back are guides split into must and optional, so a new build installs without a follow-up question, and acceptance plans readable without code. Eight years of client projects before that demanded the same: build deep technically, translate clearly — in both directions.
 - **Data sovereignty where it is required.** Full AI access to sensitive data without that data leaving the device. Precisely the condition under which many companies under GDPR and the AI Act can even begin.
 - **Context as a core competence.** Keeping ideas, experience and lines of thought available in a form AI can build something durable from — that is what I built my system for, and this CV came out of it. The figures in it were read by an agent through my own MCP server.
 

@@ -10,7 +10,7 @@ Neidenstein, Deutschland · scherler89@gmail.com · +49 1627308662 · Geb. 24.08
 
 ### Über Mich
 
-> **Am 27. November 2025 habe ich meine erste Zeile Swift geschrieben. Neun Monate später stehen 145.000 Zeilen Swift 6 in zwei eigenen Apple-Produkten** — 2.327 Commits, alleiniger Entwickler, jedes Feature mit Spezifikation und Laufzeit-Abnahme.
+> **Am 27. November 2025 habe ich meine erste Zeile Swift geschrieben. Neun Monate später stehen 158.000 Zeilen Swift 6 in drei eigenen Apple-Produkten** — 2.651 Commits, alleiniger Entwickler, jedes Feature mit Spezifikation und Laufzeit-Abnahme.
 
 Davor zehn Jahre Web, im Kern PHP, Laravel und Magento 2. Der Sprung ging nicht über schnelleres Tippen, sondern über eine andere Arbeitsweise. Ich schreibe Spezifikationen, Schnittstellen-Verträge und Abnahmekriterien — die Implementierung entsteht agentisch dagegen. Die Vorrichtungen, die das verlässlich machen, habe ich selbst gebaut: Guards, die vor dem Werkzeugaufruf greifen, Abnahme in wegwerfbaren VMs, ein eigener MCP-Server als Schnittstelle meiner Agenten auf mein Produkt.
 
@@ -26,7 +26,7 @@ Die Arbeitsteilung dahinter ist keine Einbahnstraße: Ich setze Rahmen, Muster u
 
 Die Werkzeuge sind schneller geworden, die Verfahren nicht. Vorab festgelegte Schnittstellen stammen aus einer Zeit, in der eine Iteration Wochen kostete — sie später zu ändern war teurer, als sie vorher richtig zu raten. Mit einem funktionierenden Agent-Harness kostet sie Stunden, und die Rechnung dreht sich um.
 
-An die Stelle der Vorabfestlegung tritt keine Beliebigkeit, sondern ein kürzerer Vertrag: Spezifikation und Abnahmekriterium pro Inkrement statt fürs ganze Produkt. **Die Architektur folgt damit der Erkenntnis statt der Annahme** — sichtbar an 240 von 1.684 Commits, die reine Spezifikation und Abnahme sind und über drei Monate verteilt liegen statt in einer Entwurfsphase gebündelt.
+An die Stelle der Vorabfestlegung tritt keine Beliebigkeit, sondern ein kürzerer Vertrag: Spezifikation und Abnahmekriterium pro Inkrement statt fürs ganze Produkt. **Die Architektur folgt damit der Erkenntnis statt der Annahme** — sichtbar an 264 von 1.815 Commits, die reine Spezifikation und Abnahme sind und über drei Monate verteilt liegen statt in einer Entwurfsphase gebündelt.
 
 Ich nenne es **Iteration-First**: weniger ein neues Muster als die Konsequenz daraus, dass Erkenntnis inzwischen billiger ist als Annahme.
 
@@ -55,14 +55,15 @@ Das parallelisiert Wissensarbeit: mehrere Kontexte gleichzeitig offen, ohne dass
 
 **Aktuelles macOS-Produkt — multimodale KI-Erfassung, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
 
-97.000 Zeilen Swift 6, 1.684 Commits, 254 Test-Dateien in drei Monaten — rund 1.000 Zeilen Produktivcode pro Tag, jeden Tag, inklusive Spezifikation und Abnahme. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad.
+101.000 Zeilen Swift 6, 1.815 Commits, 267 Test-Dateien in drei Monaten — rund 1.000 Zeilen Produktivcode pro Tag, jeden Tag, inklusive Spezifikation und Abnahme. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad.
 
-- **Live-Betrieb als Dauertest — von einem einzigen Nutzer.** 16.318 erfasste Einträge an 84 aktiven Tagen, im Schnitt 194 pro Tag, Spitzentag 475. Keine Seed- oder Testdaten: Entwickler und einziger Anwender in einer Person, jeder Fehler trifft mich am selben Tag.
-- **Spezifikation vor Code.** 240 der 1.684 Commits betreffen ausschließlich Spezifikation und Abnahme. Jedes Feature läuft Spec → Umsetzungsplan → Laufzeit-Abnahme.
-- **Abnahme als Infrastruktur — vom Agenten selbst durchgeführt.** Laufzeit-Tests in wegwerfbaren Tart-VMs, die den Nullzustand beliebig oft herstellen: Erstinstallation, Gatekeeper, Berechtigungen reproduzierbar statt einmalig. Der Agent klont die VM, spielt den Ausgangsbestand ein, **bedient die Oberfläche per AppleScript und prüft das Ergebnis selbst** — jeder Arbeitsstrang mit eigener Testumgebung, mehrere parallel. Abnahmeplan von 4.800 Zeilen, plus getrennte Liste für alles, was erst Zeit beantworten kann.
+- **Live-Betrieb als Dauertest — von einem einzigen Nutzer.** 16.785 erfasste Einträge an 89 aktiven Tagen, im Schnitt 189 pro Tag, Spitzentag 475. Keine Seed- oder Testdaten: Entwickler und einziger Anwender in einer Person, jeder Fehler trifft mich am selben Tag.
+- **Spezifikation vor Code.** 264 der 1.815 Commits betreffen ausschließlich Spezifikation und Abnahme. Jedes Feature läuft Spec → Umsetzungsplan → Laufzeit-Abnahme.
+- **Abnahme als Infrastruktur — vom Agenten selbst durchgeführt.** Laufzeit-Tests in wegwerfbaren Tart-VMs, die den Nullzustand beliebig oft herstellen: Erstinstallation, Gatekeeper, Berechtigungen reproduzierbar statt einmalig. Der Agent klont die VM, spielt den Ausgangsbestand ein, **bedient die Oberfläche per AppleScript und prüft das Ergebnis selbst** — jeder Arbeitsstrang mit eigener Testumgebung, mehrere parallel. Abnahmeplan von 5.300 Zeilen, plus getrennte Liste für alles, was erst Zeit beantworten kann.
 - **Guards statt Nacharbeit.** Jeder Fehler, der einmal durchkam, wird zu einer Vorrichtung, die ihn ausschließt — PreToolUse-Hooks, die vor dem Werkzeugaufruf greifen statt nach dem Fehlschlag zu melden.
-- **Auslieferungsreife als eigene Disziplin.** Developer-ID-Signatur, Notarisierung, Sparkle-Appcast mit EdDSA, Diagnose-Rückkanal und Absturzberichte aus installierten Ständen.
+- **Auslieferungsreife als eigene Disziplin.** Developer-ID-Signatur, Notarisierung, Sparkle-Appcast mit EdDSA, Diagnose-Rückkanal und Absturzberichte aus installierten Ständen. Ein Befehl baut das Testerpaket — notarisiertes DMG, signierte CLI, MCP-Server, Agenten-Setup, README — in zwei Sorten: still für Kunden, mit Telemetrie und eigenem Update-Kanal fürs Team; drei Update-Kanäle nebeneinander, die Notarisierung erkennt Voll- und Lokalmodus selbst. Zwei-Rechner-Betrieb in der VM abgenommen (20/20). Zwei Auslieferungsziele aus einer Codebasis über eine Build-Konfigurationsachse: sandboxed App-Store-Variante, Developer-ID-Variante; App-Store-Einreichung vorbereitet. Mehrnutzerbetrieb über OAuth2 auf eigenem Host geplant, Auslöser ist der zweite externe Nutzer.
 - **Eigener MCP-Server** (TypeScript) als Agenten-Schnittstelle auf das Produkt — meine Agenten arbeiten produktiv gegen meine eigene Anwendung.
+- **Zweite Plattform in fünf Tagen.** Eigene iOS-App mit 9.100 Zeilen Swift 6 und 193 Commits, vom leeren Projekt bis zum Gerät. Sie hängt an derselben Schnittstelle wie MCP-Server und macOS-Oberfläche — ein Bestand, eine Schnittstelle, drei Konsumenten, eine Stelle für Fehler. Zwischen den Geräten läuft alles Ende-zu-Ende verschlüsselt über WireGuard im eigenen Tailnet; die Netzgrenze ist die Autorisierung, bewusst kein zweiter Token. Schreibzugriffe append-only, per Whitelist begrenzt und idempotent per ID: Ein doppelter Versand ändert nichts.
 - **Observability von Anfang an:** OpenTelemetry/OTLP-Spans in Grafana Tempo, Unified Logging über OSLog.
 
 *Wie sich daraus ein Produkt fügt, zeige ich bei beidseitigem Interesse gern live. Ein Beleg steht aber schon hier: Das System hält Kontext über die eigene Arbeit — Ideen, Erfahrungen, Denkwege — und genau daraus ist dieser Lebenslauf entstanden. Die Zahlen oben hat ein Agent über seinen MCP-Server ausgelesen.*
@@ -116,7 +117,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Agentic & KI:** Claude Code (Hooks, Subagenten, Slash-Commands, Headless-Mode) · MCP — eigene Server bauen (TypeScript, FastMCP) und als Client konsumieren · Spec-Driven Development · Context Engineering · Prompt Engineering · Multi-Agent-Orchestrierung · parallele Agenten-Sessions (tmux, Git-Worktrees) · Evals & Laufzeit-Abnahme · RAG / LLM-Knowledge-Compiler · OpenRouter-Modell-Kaskaden & Failover · LLM-Ops / OpenAI-Wire-Protocol-Gateways · Agentic Loops (ReAct) · Hermes Agent (Nous Research) · OpenClaw / NemoClaw · Cursor · Codex
 
-**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Rive · Global Hotkeys & MenuBar-Apps (NSStatusItem) · CGEvent / ApplicationServices · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC-Permissions & App-Sandbox · Developer ID, codesign & notarytool · Sparkle (Appcast, EdDSA) · LaunchAgents / launchd
+**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · HealthKit · CoreMotion · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Rive · Global Hotkeys & MenuBar-Apps (NSStatusItem) · CGEvent / ApplicationServices · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC-Permissions & App-Sandbox · Developer ID, codesign & notarytool · Sparkle (Appcast, EdDSA) · LaunchAgents / launchd
 
 **Architektur & Daten:** Domänen-getrennte Datenbanken mit Transfer-Journal · polymorphe Entitäten über Eintragstypen · SQLite (WAL, FTS5) · GRDB · PostgreSQL · MySQL / MariaDB · Redis · Elasticsearch · JSON / JSON-LD / Schema.org · XML · YAML · Markdown · CSV
 
@@ -126,7 +127,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Sprachen & Web-Stack:** Swift · Python · TypeScript / Node.js · JavaScript · PHP (5.6–8.3) · Bash / Shell · SQL · HTML / CSS · FastAPI / Starlette / uvicorn · Pydantic · Jinja2 · React · Vue.js · Laravel · Magento 2 · React Native · Three.js · Electron · Playwright · Chrome DevTools Protocol (CDP) · PyMuPDF · Pillow · Slack Bolt · ffmpeg · Bun · zod
 
-**Methoden:** Iteration-First (Architektur folgt der Erkenntnis) · Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP
+**Methoden:** Iteration-First (Architektur folgt der Erkenntnis) · Spec-Driven Development · abnahmegetriebene Entwicklung · Parallelisierung über isolierte Arbeitsverzeichnisse · Context Engineering (Target-State) · idempotente Deploy-Pipelines & Snapshot-Rollback · PRD-First Feature Development · Privacy-by-Architecture / Data Sovereignty · CLI-over-MCP · Zusammenarbeit mit nicht-technischen Stakeholdern
 
 **Domänen:** Multimodale KI auf dem Gerät · On-Device-Inferenz & Local-First-Architektur · agentische Entwicklungssysteme & LLM-Ops · macOS-/iOS-Produktentwicklung · Recruitment-Tech / ATS-Automatisierung (DACH)
 
@@ -154,10 +155,11 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Multimodale KI auf dem eigenen Gerät · täglich im Einsatz**
 
-Laufend anfallende Arbeitsdaten mit hohem Personenbezug sind das Sensibelste, was ein Arbeitsrechner überhaupt zu sehen bekommt. Die übliche Antwort darauf ist Verschlüsselung in der Cloud. Meine Antwort ist, dass die Daten das Gerät gar nicht erst verlassen.
+Laufend anfallende Arbeitsdaten mit hohem Personenbezug sind das Sensibelste, was ein Arbeitsrechner überhaupt zu sehen bekommt. Die übliche Antwort darauf ist Verschlüsselung in der Cloud. Meine Antwort ist, dass die Daten meine eigenen Geräte gar nicht erst verlassen.
 
 - **Alles auf dem Gerät.** Transkription über Apples SpeechAnalyzer lokal, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad, kein Fremdanbieter, kein Modell-Download. Diese Entscheidung ist bewusst gefallen — nicht aus Mangel an Infrastruktur, sondern weil sie bei diesen Daten die richtige ist.
 - **Domänen als Grenzen.** Getrennte Datenbanken statt einer mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. Datenschutz als Bauweise statt als Einstellung.
+- **Was sich bewegt, bewegt sich verschlüsselt.** Gerät zu Gerät über WireGuard im eigenen Tailnet, kein fremder Server im Weg; Update-, Diagnose- und Telemetriekanal über TLS; Sicherungen als authentifiziert verschlüsselte Archive, Schlüssel im Schlüsselbund — im Notfall mit Bordmitteln des Systems lesbar, ohne das Produkt.
 - **Und trotzdem für KI nutzbar.** Ein eigener MCP-Server öffnet den gesamten Bestand strukturiert für Agenten — lokal, ohne dass ein Byte das Gerät verlässt. Genau das Problem, das Unternehmen unter DSGVO und AI Act haben, in meiner eigenen Umgebung gelöst und im Alltag bewiesen.
 - **Lokal heißt begrenzt — also gehört Retention zur Architektur.** Wer alles auf dem Gerät hält, hat keinen elastischen Speicher. Seit Tag eins läuft ein Aufräumdienst im Produkt; der rollierende Pruner arbeitet bewusst **ohne VACUUM**, weil das kurzzeitig doppelten Platz bräuchte. Cleanup läuft abseits des Hauptthreads, Build-Artefakte und Wegwerf-VMs haben definierte Lebenszyklen.
 - **Die Plattform ist kein Kompromiss, sondern Voraussetzung.** Das Ganze läuft samt paralleler VM-Testumgebungen auf einem einzelnen Mac mini mit 256 GB. On-Device-Inferenz, Tart-VMs und Notarisierung gibt es nur hier — nicht die meisten Ressourcen, aber die richtige Umgebung, gezielt gewählt.
@@ -167,11 +169,12 @@ Laufend anfallende Arbeitsdaten mit hohem Personenbezug sind das Sensibelste, wa
 
 ### Was ich mitbringe — und wofür
 
-Ich habe in einer Umgebung, die ich vollständig selbst verantworte, den kompletten Weg gemacht: Problem verstanden, System gebaut, in den Produktivbetrieb gebracht, betrieben, gemessen, nachgeschärft. Ohne Team, ohne Sicherheitsnetz, mit KI als Verstärker.
+Ich habe in einer Umgebung, die ich vollständig selbst verantworte, den kompletten Weg gemacht: Problem verstanden, System gebaut, in den Produktivbetrieb gebracht, betrieben, gemessen, nachgeschärft. Ohne Entwicklerteam, ohne Sicherheitsnetz, mit KI als Verstärker.
 
 - **Ausliefern statt vorführen.** Signierte und notarisierte Verteilung, eigener Update-Kanal, Diagnose-Rückkanal aus installierten Ständen. Ein Prototyp, der nur in der Vorführung läuft, hätte mich am selben Tag getroffen — ich war Entwickler und Anwender in einer Person.
-- **Bewerten statt hoffen.** Jedes Feature hat ein Abnahmekriterium, bevor es Code hat: 4.800 Zeilen Abnahmeplan, Laufzeit-Tests in wegwerfbaren VMs, eine getrennte Liste für alles, was erst Zeit beantworten kann.
-- **In fremden Stacks schnell handlungsfähig.** Von null Swift auf 145.000 Zeilen in neun Monaten — samt Nebenläufigkeitsmodell, Datenschicht, Systemframeworks und kompletter Signatur- und Auslieferungskette. Die Sprache war dabei der kleinste Teil. Was ich noch nicht kenne, gehe ich denselben Weg: Muster zuerst, Vokabular danach.
+- **Bewerten statt hoffen.** Jedes Feature hat ein Abnahmekriterium, bevor es Code hat: 5.300 Zeilen Abnahmeplan, Laufzeit-Tests in wegwerfbaren VMs, eine getrennte Liste für alles, was erst Zeit beantworten kann.
+- **In fremden Stacks schnell handlungsfähig.** Von null Swift auf 158.000 Zeilen in neun Monaten — samt Nebenläufigkeitsmodell, Datenschicht, Systemframeworks und kompletter Signatur- und Auslieferungskette. Die Sprache war dabei der kleinste Teil. Was ich noch nicht kenne, gehe ich denselben Weg: Muster zuerst, Vokabular danach.
+- **Nicht-technische Menschen mitnehmen.** Mein Projektpartner ist kein Entwickler. Ideen, Einwände und Testeindrücke kommen in Alltagssprache an; zurück gehen Anleitungen in Muss und Kann, damit ein neuer Stand ohne Rückfrage installiert ist, und Abnahmepläne, die ohne Code lesbar sind. Acht Jahre Kundenprojekte davor haben dasselbe verlangt: technisch tief bauen, verständlich übersetzen — in beide Richtungen.
 - **Datenhoheit, wo sie verlangt wird.** Vollständiger KI-Zugriff auf sensible Daten, ohne dass sie das Gerät verlassen. Genau die Bedingung, unter der viele Unternehmen unter DSGVO und AI Act überhaupt erst anfangen können.
 - **Kontext als Kernkompetenz.** Ideen, Erfahrungen und Denkwege so verfügbar zu halten, dass KI daraus etwas bauen kann, das trägt — dafür habe ich mein System gebaut, und dieser Lebenslauf ist daraus entstanden. Die Zahlen darin hat ein Agent über meinen eigenen MCP-Server ausgelesen.
 
