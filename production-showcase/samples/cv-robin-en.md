@@ -43,19 +43,19 @@ My way of working is built for parallelism: write a specification, put an agent 
 
 *One day, read off the commit log — 28 August 2026:* 09:44 a measurement confirming a refactor. 16:16 build 1669 shipped. 17:04 to 21:12 specification and a ten-step plan for the next rebuild. In the evening, in parallel, this CV. Thirteen feature branches stood alongside, another project was starting up. **The CV was the smallest item of the day.**
 
-**Shared domains instead of one database**
+**Isolation by construction, not by operating rule**
 
-The same idea carries the architecture of my current product: storage is split into separate **domains** — self-contained data worlds each with their own database, between which entries are deliberately transferred rather than merged. A dedicated coordination layer with a transfer journal and exchange protocol keeps them consistent. Cross-cutting **entities** sit across them and reach polymorphically over all entry types.
+The same idea carries the architecture of my current product: storage is split into self-contained stores kept apart from one another — each with its own database rather than one shared database with a tenant column. A query therefore *cannot* read across a boundary; the separation does not depend on care in the query code. A dedicated coordination layer keeps the stores consistent and makes every transition between them traceable.
 
-That parallelises knowledge work: several contexts open at once, without a query ever reading across a boundary by accident — privacy by architecture as a construction method, not as a statement of intent.
+This is the requirement that recurs in regulated environments: several data stores on one system, without a defect in one query mixing them. Privacy by architecture as a construction method, not as a statement of intent.
 
 ---
 
 ### Own Products — Apple Platform
 
-**Current macOS product — multimodal AI capture, entirely on device · sole developer · since 05/2026**
+**Current macOS product — a multimodal AI system for sensitive work data, entirely on device · sole developer · since 05/2026**
 
-101,000 lines of Swift 6, 1,815 commits, 267 test files in three months — roughly 1,000 lines of production code per day, every day, specification and acceptance included. Several data modalities, each with its own capture, processing and persistence path — all on device, no third party in the data path.
+101,000 lines of Swift 6, 1,815 commits, 267 test files in three months — roughly 1,000 lines of production code per day, every day, specification and acceptance included. Several data types, each with its own processing and persistence path — all on device, no third party in the data path.
 
 - **Live operation as a continuous test — from a single user.** 16,785 captured entries across 89 active days, 189 per day on average, 475 on the peak day. No seed or test data: developer and sole user in one person, every defect hits me the same day.
 - **Specification before code.** 264 of the 1,815 commits concern specification and acceptance only. Every feature runs spec → implementation plan → runtime acceptance.
@@ -101,7 +101,7 @@ The infrastructure behind my systems is a product in itself: twelve reusable blo
 - **Two servers run in parallel** with no dependency on one another; both pipelines start at the same time.
 - Software practice applied to deployment: idempotent steps, versioned blocks, a documented reason per decision — the same discipline as in application code.
 
-[View a session clip](https://agentic-engineer.online/library#clip-1) · [Voice pitch — I introduce myself by voice, my app answers and is connected to my Slack channel](https://www.linkedin.com/posts/robin-s-223606136_hiermit-lade-ich-alle-ein-mit-mir-ins-gespr%C3%A4ch-activity-7434159927142801408-2yGt/)
+[View a session clip](https://agentic-engineer.online/library#clip-1) · [Voice pitch — I introduce myself by voice, my app answers live](https://www.linkedin.com/posts/robin-s-223606136_hiermit-lade-ich-alle-ein-mit-mir-ins-gespr%C3%A4ch-activity-7434159927142801408-2yGt/)
 
 ---
 
@@ -117,9 +117,9 @@ The infrastructure behind my systems is a product in itself: twelve reusable blo
 
 **Agentic & AI:** Claude Code (hooks, subagents, slash commands, headless mode) · MCP — building own servers (TypeScript, FastMCP) and consuming as a client · Spec-Driven Development · Context Engineering · Prompt Engineering · Multi-Agent Orchestration · parallel agent sessions (tmux, Git worktrees) · Evals & runtime acceptance · RAG / LLM Knowledge Compiler · OpenRouter model cascades & failover · LLM Ops / OpenAI Wire Protocol gateways · Agentic Loops (ReAct) · Hermes Agent (Nous Research) · OpenClaw / NemoClaw · Cursor · Codex
 
-**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · HealthKit · CoreMotion · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Rive · global hotkeys & menu-bar apps (NSStatusItem) · CGEvent / ApplicationServices · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC permissions & App Sandbox · Developer ID, codesign & notarytool · Sparkle (appcast, EdDSA) · LaunchAgents / launchd
+**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · HealthKit · CoreMotion · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · global hotkeys & menu-bar apps (NSStatusItem) · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC permissions & App Sandbox · Developer ID, codesign & notarytool · Sparkle (appcast, EdDSA) · LaunchAgents / launchd
 
-**Architecture & Data:** domain-separated databases with a transfer journal · polymorphic entities across entry types · SQLite (WAL, FTS5) · GRDB · PostgreSQL · MySQL / MariaDB · Redis · Elasticsearch · JSON / JSON-LD / Schema.org · XML · YAML · Markdown · CSV
+**Architecture & Data:** tenant separation through self-contained databases · auditable transitions between stores · cross-type linking models · SQLite (WAL, FTS5) · GRDB · PostgreSQL · MySQL / MariaDB · Redis · Elasticsearch · JSON / JSON-LD / Schema.org · XML · YAML · Markdown · CSV
 
 **Testing, Delivery & Observability:** Swift Testing & XCTest · unit and integration tests · runtime acceptance in Tart VMs · test-plan and long-term-test practice · PreToolUse guards for agents · GitHub Actions (CI gate, branch protection, changelog) · Bitbucket Pipelines · Conventional Commits · Git worktrees & stacked branches · OpenTelemetry / OTLP · Grafana / Tempo · OSLog / unified logging · diagnostics channel & crash reports
 
@@ -157,7 +157,7 @@ The infrastructure behind my systems is a product in itself: twelve reusable blo
 Continuously accruing work data with a high personal-data content is the most sensitive material a work machine ever sees. The usual answer is encryption in the cloud. My answer is that the data never leaves my own devices in the first place.
 
 - **Everything on device.** Transcription through Apple's SpeechAnalyzer locally, persistence in SQLite with a full-text index, no backend in the data path, no third party, no model download. This decision was deliberate — not for want of infrastructure, but because it is the right one for this data.
-- **Domains as boundaries.** Separate databases instead of one with a tenant column: a query *cannot* read across a boundary. Data protection as a construction method rather than a setting.
+- **Separation as the boundary.** Separate stores instead of one shared store: a query *cannot* read across a boundary. Data protection as a construction method rather than a setting.
 - **What moves, moves encrypted.** Device to device over WireGuard in my own tailnet, no third-party server in between; update, diagnostics and telemetry channels over TLS; backups as authenticated encrypted archives, key in the keychain — readable with the system's own tools in an emergency, without the product.
 - **And usable by AI regardless.** A dedicated MCP server opens the entire store to agents in structured form — locally, without a single byte leaving the device. Exactly the problem companies face under GDPR and the AI Act, solved in my own environment and proven in daily use.
 - **Local means finite — so retention belongs in the architecture.** Keeping everything on the device leaves no elastic storage. A cleanup service has run in the product since day one; the rolling pruner deliberately works **without VACUUM**, because that would briefly need twice the space. Cleanup runs off the main thread, build artefacts and disposable VMs have defined lifecycles.

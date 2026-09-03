@@ -43,19 +43,19 @@ Meine Arbeitsweise ist auf Parallelität ausgelegt: Spezifikation schreiben, ein
 
 *Ein Tag, abgelesen am Commit-Log — der 28. August 2026:* 09:44 eine Messung, die einen Refactor bestätigte. 16:16 Build 1669 ausgeliefert. 17:04 bis 21:12 Spezifikation und Zehn-Schritte-Plan für den nächsten Umbau. Am Abend, parallel dazu, dieser Lebenslauf. Dreizehn Feature-Zweige standen daneben, ein weiteres Projekt lief an. **Der Lebenslauf war der kleinste Posten des Tages.**
 
-**Geteilte Domänen statt einer Datenbank**
+**Isolation als Bauweise statt als Betriebsregel**
 
-Dieselbe Idee trägt die Architektur meines aktuellen Produkts: Die Datenhaltung ist in getrennte **Domänen** zerlegt — eigenständige Datenwelten mit je eigener Datenbank, zwischen denen Einträge bewusst transferiert werden, statt zu verschmelzen. Eine eigene Koordinationsschicht mit Transfer-Journal und Austauschprotokoll hält sie konsistent. Querschnitts-**Entitäten** liegen quer dazu und greifen polymorph über alle Eintragstypen.
+Dieselbe Idee trägt die Architektur meines aktuellen Produkts: Die Datenhaltung ist in eigenständige, voneinander getrennte Bestände zerlegt — je eigene Datenbank statt einer gemeinsamen mit Mandantenspalte. Eine Abfrage *kann* damit nicht über eine Grenze lesen; die Trennung hängt nicht an der Sorgfalt im Abfragecode. Eine eigene Koordinationsschicht hält die Bestände konsistent und macht jeden Übergang zwischen ihnen nachvollziehbar.
 
-Das parallelisiert Wissensarbeit: mehrere Kontexte gleichzeitig offen, ohne dass eine Abfrage versehentlich über eine Grenze liest — Privacy-by-Architecture als Bauweise, nicht als Absichtserklärung.
+Das ist die Anforderung, die in regulierten Umgebungen wiederkehrt: mehrere Datenbestände auf einem System, ohne dass ein Fehler in einer Abfrage sie vermischen kann. Privacy-by-Architecture als Bauweise, nicht als Absichtserklärung.
 
 ---
 
 ### Eigene Produkte — Apple-Plattform
 
-**Aktuelles macOS-Produkt — multimodale KI-Erfassung, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
+**Aktuelles macOS-Produkt — multimodales KI-System für sensible Arbeitsdaten, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
 
-101.000 Zeilen Swift 6, 1.815 Commits, 267 Test-Dateien in drei Monaten — rund 1.000 Zeilen Produktivcode pro Tag, jeden Tag, inklusive Spezifikation und Abnahme. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad.
+101.000 Zeilen Swift 6, 1.815 Commits, 267 Test-Dateien in drei Monaten — rund 1.000 Zeilen Produktivcode pro Tag, jeden Tag, inklusive Spezifikation und Abnahme. Mehrere Datenarten mit je eigenem Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad.
 
 - **Live-Betrieb als Dauertest — von einem einzigen Nutzer.** 16.785 erfasste Einträge an 89 aktiven Tagen, im Schnitt 189 pro Tag, Spitzentag 475. Keine Seed- oder Testdaten: Entwickler und einziger Anwender in einer Person, jeder Fehler trifft mich am selben Tag.
 - **Spezifikation vor Code.** 264 der 1.815 Commits betreffen ausschließlich Spezifikation und Abnahme. Jedes Feature läuft Spec → Umsetzungsplan → Laufzeit-Abnahme.
@@ -101,7 +101,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 - **Zwei Server laufen parallel** ohne Abhängigkeit voneinander; beide Pipelines starten gleichzeitig.
 - Software-Praxis im Deployment: idempotente Schritte, versionierte Bausteine, ein dokumentierter Grund je Entscheidung — dieselbe Disziplin wie im Anwendungscode.
 
-[Session-Clip ansehen](https://agentic-engineer.online/library#clip-1) · [Voice Pitch — ich stelle mich per Sprache vor, meine App antwortet und ist mit meinem Slack-Channel verbunden](https://www.linkedin.com/posts/robin-s-223606136_hiermit-lade-ich-alle-ein-mit-mir-ins-gespr%C3%A4ch-activity-7434159927142801408-2yGt/)
+[Session-Clip ansehen](https://agentic-engineer.online/library#clip-1) · [Voice Pitch — ich stelle mich per Sprache vor, meine App antwortet live](https://www.linkedin.com/posts/robin-s-223606136_hiermit-lade-ich-alle-ein-mit-mir-ins-gespr%C3%A4ch-activity-7434159927142801408-2yGt/)
 
 ---
 
@@ -117,9 +117,9 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 
 **Agentic & KI:** Claude Code (Hooks, Subagenten, Slash-Commands, Headless-Mode) · MCP — eigene Server bauen (TypeScript, FastMCP) und als Client konsumieren · Spec-Driven Development · Context Engineering · Prompt Engineering · Multi-Agent-Orchestrierung · parallele Agenten-Sessions (tmux, Git-Worktrees) · Evals & Laufzeit-Abnahme · RAG / LLM-Knowledge-Compiler · OpenRouter-Modell-Kaskaden & Failover · LLM-Ops / OpenAI-Wire-Protocol-Gateways · Agentic Loops (ReAct) · Hermes Agent (Nous Research) · OpenClaw / NemoClaw · Cursor · Codex
 
-**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · HealthKit · CoreMotion · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Rive · Global Hotkeys & MenuBar-Apps (NSStatusItem) · CGEvent / ApplicationServices · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC-Permissions & App-Sandbox · Developer ID, codesign & notarytool · Sparkle (Appcast, EdDSA) · LaunchAgents / launchd
+**macOS / iOS / Swift:** Swift 6 (Concurrency, Sendable, Synchronization) · SwiftUI · AppKit · The Composable Architecture (TCA) · Observation · GRDB (WAL, FTS5) · SpeechAnalyzer / SpeechTranscriber · AVFoundation / AVAudioEngine / CoreAudio · ScreenCaptureKit · Vision (OCR) · HealthKit · CoreMotion · CoreImage / CoreGraphics / ImageIO · CryptoKit · NaturalLanguage · PDFKit · Global Hotkeys & MenuBar-Apps (NSStatusItem) · Swift ArgumentParser (CLI) · SwiftPM & XcodeGen · App Group · TCC-Permissions & App-Sandbox · Developer ID, codesign & notarytool · Sparkle (Appcast, EdDSA) · LaunchAgents / launchd
 
-**Architektur & Daten:** Domänen-getrennte Datenbanken mit Transfer-Journal · polymorphe Entitäten über Eintragstypen · SQLite (WAL, FTS5) · GRDB · PostgreSQL · MySQL / MariaDB · Redis · Elasticsearch · JSON / JSON-LD / Schema.org · XML · YAML · Markdown · CSV
+**Architektur & Daten:** Mandantentrennung über eigenständige Datenbanken · auditierbare Übergänge zwischen Beständen · typübergreifende Verknüpfungsmodelle · SQLite (WAL, FTS5) · GRDB · PostgreSQL · MySQL / MariaDB · Redis · Elasticsearch · JSON / JSON-LD / Schema.org · XML · YAML · Markdown · CSV
 
 **Testing, Auslieferung & Observability:** Swift Testing & XCTest · Unit- und Integrationstests · Laufzeit-Abnahme in Tart-VMs · Testplan- und Langzeittest-Praxis · PreToolUse-Guards für Agenten · GitHub Actions (CI-Gate, Branch-Protection, Changelog) · Bitbucket Pipelines · Conventional Commits · Git-Worktrees & stacked branches · OpenTelemetry / OTLP · Grafana / Tempo · OSLog / Unified Logging · Diagnose-Rückkanal & Absturzberichte
 
@@ -158,7 +158,7 @@ Die Infrastruktur hinter meinen Systemen ist selbst ein Produkt: zwölf wiederve
 Laufend anfallende Arbeitsdaten mit hohem Personenbezug sind das Sensibelste, was ein Arbeitsrechner überhaupt zu sehen bekommt. Die übliche Antwort darauf ist Verschlüsselung in der Cloud. Meine Antwort ist, dass die Daten meine eigenen Geräte gar nicht erst verlassen.
 
 - **Alles auf dem Gerät.** Transkription über Apples SpeechAnalyzer lokal, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad, kein Fremdanbieter, kein Modell-Download. Diese Entscheidung ist bewusst gefallen — nicht aus Mangel an Infrastruktur, sondern weil sie bei diesen Daten die richtige ist.
-- **Domänen als Grenzen.** Getrennte Datenbanken statt einer mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. Datenschutz als Bauweise statt als Einstellung.
+- **Trennung als Grenze.** Getrennte Bestände statt eines gemeinsamen: Eine Abfrage *kann* nicht über eine Grenze lesen. Datenschutz als Bauweise statt als Einstellung.
 - **Was sich bewegt, bewegt sich verschlüsselt.** Gerät zu Gerät über WireGuard im eigenen Tailnet, kein fremder Server im Weg; Update-, Diagnose- und Telemetriekanal über TLS; Sicherungen als authentifiziert verschlüsselte Archive, Schlüssel im Schlüsselbund — im Notfall mit Bordmitteln des Systems lesbar, ohne das Produkt.
 - **Und trotzdem für KI nutzbar.** Ein eigener MCP-Server öffnet den gesamten Bestand strukturiert für Agenten — lokal, ohne dass ein Byte das Gerät verlässt. Genau das Problem, das Unternehmen unter DSGVO und AI Act haben, in meiner eigenen Umgebung gelöst und im Alltag bewiesen.
 - **Lokal heißt begrenzt — also gehört Retention zur Architektur.** Wer alles auf dem Gerät hält, hat keinen elastischen Speicher. Seit Tag eins läuft ein Aufräumdienst im Produkt; der rollierende Pruner arbeitet bewusst **ohne VACUUM**, weil das kurzzeitig doppelten Platz bräuchte. Cleanup läuft abseits des Hauptthreads, Build-Artefakte und Wegwerf-VMs haben definierte Lebenszyklen.
