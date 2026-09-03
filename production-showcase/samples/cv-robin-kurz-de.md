@@ -10,7 +10,7 @@ Neidenstein, Deutschland · scherler89@gmail.com · +49 1627308662 · Geb. 24.08
 
 ### Über Mich
 
-> **Am 27. November 2025 habe ich meine erste Zeile Swift geschrieben. Neun Monate später stehen 158.000 Zeilen Swift 6 in drei eigenen Apple-Produkten** — 2.651 Commits, alleiniger Entwickler, jedes Feature mit Spezifikation und Laufzeit-Abnahme.
+> **Am 27. November 2025 habe ich meine erste Zeile Swift geschrieben. Neun Monate später stehen 158.000 Zeilen Swift 6 in drei eigenen Apple-Produkten** — 2.666 Commits, alleiniger Entwickler, jedes Feature mit Spezifikation und Laufzeit-Abnahme.
 
 Davor zehn Jahre Web, im Kern PHP, Laravel und Magento 2. Der Sprung ging nicht über schnelleres Tippen, sondern über eine andere Arbeitsweise: Ich schreibe Spezifikationen, Schnittstellen-Verträge und Abnahmekriterien — die Implementierung entsteht agentisch dagegen. **Die Programmiersprache ist damit zweitrangig geworden, die Muster nicht.** Ich setze Rahmen und Abnahmemaß, die Agenten tragen die Ausführung, und beides verbessert sich mit jeder Runde.
 
@@ -27,7 +27,7 @@ Davor zehn Jahre Web, im Kern PHP, Laravel und Magento 2. Der Sprung ging nicht 
 101.000 Zeilen Swift 6, 1.815 Commits, 267 Test-Dateien in drei Monaten. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad. **16.785 erfasste Einträge an 89 aktiven Tagen, ein einziger Nutzer: ich.** Keine Seed-Daten, echter Dauerbetrieb.
 
 - **Datenhoheit als Bauweise.** Transkription lokal über Apples SpeechAnalyzer, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad. Getrennte Datenbank-Domänen statt einer mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. **Trotzdem für KI nutzbar** — ein eigener MCP-Server öffnet den Bestand strukturiert für Agenten, ohne dass ein Byte das Gerät verlässt.
-- **Zweite Plattform in fünf Tagen.** Eigene iOS-App (9.100 Zeilen Swift 6, 193 Commits) an derselben Schnittstelle wie MCP-Server und macOS-Oberfläche — ein Bestand, eine Schnittstelle, drei Konsumenten, eine Stelle für Fehler. Zwischen den Geräten alles Ende-zu-Ende verschlüsselt über WireGuard im eigenen Tailnet; die Netzgrenze ist die Autorisierung. Schreibzugriffe append-only, idempotent per ID.
+- **Zweite Plattform in fünf Tagen.** Eigene iOS-App (8.800 Zeilen Swift 6, 208 Commits) an derselben Schnittstelle wie MCP-Server und macOS-Oberfläche — ein Bestand, eine Schnittstelle, drei Konsumenten, eine Stelle für Fehler. Zwischen den Geräten alles Ende-zu-Ende verschlüsselt über WireGuard im eigenen Tailnet; die Netzgrenze ist die Autorisierung. Schreibzugriffe append-only, idempotent per ID.
 - **Auslieferungsreife als eigene Disziplin.** Developer-ID-Signatur, Notarisierung, Sparkle-Appcast mit EdDSA, Diagnose-Rückkanal aus installierten Ständen. Ein Befehl baut das Testerpaket in zwei Sorten, still für Kunden und mit Telemetrie samt eigenem Update-Kanal fürs Team; App-Store- und Developer-ID-Variante entstehen aus einer Codebasis. Observability über OpenTelemetry/OTLP in Grafana Tempo.
 - **Abnahme als Infrastruktur.** 5.300 Zeilen Abnahmeplan, Laufzeit-Tests in wegwerfbaren Tart-VMs: Der Agent klont die VM, bedient die Oberfläche per AppleScript und prüft selbst.
 
