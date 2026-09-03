@@ -22,11 +22,11 @@ Davor zehn Jahre Web, im Kern PHP, Laravel und Magento 2. Der Sprung ging nicht 
 
 ### Eigene Produkte & Systeme
 
-**Aktuelles macOS-Produkt — multimodale KI-Erfassung, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
+**Aktuelles macOS-Produkt — multimodales KI-System für sensible Arbeitsdaten, vollständig auf dem Gerät · alleiniger Entwickler · seit 05/2026**
 
-101.000 Zeilen Swift 6, 1.815 Commits, 267 Test-Dateien in drei Monaten. Mehrere Datenmodalitäten mit je eigenem Erfassungs-, Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad. **16.785 erfasste Einträge an 89 aktiven Tagen, ein einziger Nutzer: ich.** Keine Seed-Daten, echter Dauerbetrieb.
+101.000 Zeilen Swift 6, 1.815 Commits, 267 Test-Dateien in drei Monaten. Mehrere Datenarten mit je eigenem Verarbeitungs- und Persistenzpfad — sämtlich auf dem Gerät, kein Fremdanbieter im Datenpfad. **16.785 erfasste Einträge an 89 aktiven Tagen, ein einziger Nutzer: ich.** Keine Seed-Daten, echter Dauerbetrieb.
 
-- **Datenhoheit als Bauweise.** Transkription lokal über Apples SpeechAnalyzer, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad. Getrennte Datenbank-Domänen statt einer mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. **Trotzdem für KI nutzbar** — ein eigener MCP-Server öffnet den Bestand strukturiert für Agenten, ohne dass ein Byte das Gerät verlässt.
+- **Datenhoheit als Bauweise.** Transkription lokal über Apples SpeechAnalyzer, Persistenz in SQLite mit Volltextindex, kein Backend im Datenpfad. Getrennte Bestände mit je eigener Datenbank statt einer gemeinsamen mit Mandantenspalte: Eine Abfrage *kann* nicht über eine Grenze lesen. **Trotzdem für KI nutzbar** — ein eigener MCP-Server öffnet den Bestand strukturiert für Agenten, ohne dass ein Byte das Gerät verlässt.
 - **Zweite Plattform in fünf Tagen.** Eigene iOS-App (8.800 Zeilen Swift 6, 208 Commits) an derselben Schnittstelle wie MCP-Server und macOS-Oberfläche — ein Bestand, eine Schnittstelle, drei Konsumenten, eine Stelle für Fehler. Zwischen den Geräten alles Ende-zu-Ende verschlüsselt über WireGuard im eigenen Tailnet; die Netzgrenze ist die Autorisierung. Schreibzugriffe append-only, idempotent per ID.
 - **Auslieferungsreife als eigene Disziplin.** Developer-ID-Signatur, Notarisierung, Sparkle-Appcast mit EdDSA, Diagnose-Rückkanal aus installierten Ständen. Ein Befehl baut das Testerpaket in zwei Sorten, still für Kunden und mit Telemetrie samt eigenem Update-Kanal fürs Team; App-Store- und Developer-ID-Variante entstehen aus einer Codebasis. Observability über OpenTelemetry/OTLP in Grafana Tempo.
 - **Abnahme als Infrastruktur.** 5.300 Zeilen Abnahmeplan, Laufzeit-Tests in wegwerfbaren Tart-VMs: Der Agent klont die VM, bedient die Oberfläche per AppleScript und prüft selbst.

@@ -22,11 +22,11 @@ Before that, ten years of web work, mainly PHP, Laravel and Magento 2. The jump 
 
 ### Own Products & Systems
 
-**Current macOS product — multimodal AI capture, entirely on device · sole developer · since 05/2026**
+**Current macOS product — a multimodal AI system for sensitive work data, entirely on device · sole developer · since 05/2026**
 
-101,000 lines of Swift 6, 1,815 commits, 267 test files in three months. Several data modalities, each with its own capture, processing and persistence path — all on device, no third party in the data path. **16,785 captured entries across 89 active days, a single user: me.** No seed data, genuine continuous operation.
+101,000 lines of Swift 6, 1,815 commits, 267 test files in three months. Several data types, each with its own processing and persistence path — all on device, no third party in the data path. **16,785 captured entries across 89 active days, a single user: me.** No seed data, genuine continuous operation.
 
-- **Data sovereignty as a construction method.** Transcription locally through Apple's SpeechAnalyzer, persistence in SQLite with a full-text index, no backend in the data path. Separate database domains instead of one with a tenant column: a query *cannot* read across a boundary. **Usable by AI regardless** — a dedicated MCP server opens the store to agents in structured form, without a single byte leaving the device.
+- **Data sovereignty as a construction method.** Transcription locally through Apple's SpeechAnalyzer, persistence in SQLite with a full-text index, no backend in the data path. Separate stores each with their own database instead of one shared database with a tenant column: a query *cannot* read across a boundary. **Usable by AI regardless** — a dedicated MCP server opens the store to agents in structured form, without a single byte leaving the device.
 - **A second platform in five days.** My own iOS app (8,800 lines of Swift 6, 208 commits) on the same interface as the MCP server and the macOS interface — one store, one interface, three consumers, one place for defects. Everything between the devices end-to-end encrypted over WireGuard in my own tailnet; the network boundary is the authorization. Write access append-only, idempotent by ID.
 - **Release readiness as its own discipline.** Developer ID signing, notarization, Sparkle appcast with EdDSA, diagnostics channel from installed builds. One command builds the tester package in two flavours, silent for customers and with telemetry plus its own update channel for the team; App Store and Developer ID variants come from one codebase. Observability through OpenTelemetry/OTLP in Grafana Tempo.
 - **Acceptance as infrastructure.** 5,300 lines of acceptance plan, runtime tests in disposable Tart VMs: the agent clones the VM, operates the interface via AppleScript and checks the result itself.
